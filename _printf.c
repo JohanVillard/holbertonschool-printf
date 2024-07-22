@@ -10,43 +10,47 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list data;
-	unsigned int count = 0;			/* Number of characters */
-	int i = 0;
-	parser_t modulo_parser[] = {	/*  */
+va_list data;											/* Store a va_list */
+	unsigned int count = 0;								/* Number of characters */
+	int i = 0;											/* Occurrence counter */
+	parser_t modulo_parser[] = {						/* Specifier associates to print and count functions */
 		{"c", print_char},
 		{"s", print_string},
-		{NULL, NULL},
+		{NULL, NULL},									/* Indicates the end of the structure */
 	};
 
-	va_start(data, format);			/* Start the check lst */
-	while (*format)					/* Run the string */
+	va_start(data, format);								/* Initialize the va_list */
+	while (*format)										/* Run the string */
 	{
-		if (*format == '%')
+		if (*format == '%')								/* If the directive begins */
 		{
-			while (modulo_parser[i].specifier != NULL)
+			while (modulo_parser[i].specifier != NULL)	/* Run the modulo struct */
 			{
-				if (*modulo_parser[i].specifier == *(format + 1))
+				if (*modulo_parser[i].specifier == *(format + 1))	/* If a specifier is found */
 				{
-					count += modulo_parser[i].f(data);
-					format += 2;
-					if (*format != '%')
+					count += modulo_parser[i].f(data);	/* Count the bytes and print the value */
+					format += 2;						/* Move pointer after the % and specifier */
+					if (*format != '%')					/* If not another directive begin */
 					{
-						break;
+						i = 0;							/* Counter is reset for next search */
+						break;							/* Stop the while loop */
 					}
+					i = 0;								/* If it is, counter is reset */
 				}
-				i++;
+				else									/* If a specifier is not found */
+				{		
+					i++;								/* Continue to search */
+				}
 			}
 		}
-		i = 0;
-		if (*format != '\0')
+		if (*format != '\0')							/* If index of format is no empty */
 		{
 			_putchar(*format);
-			format++;
-			count++;
-		}						/* Count length of string */				/* Move format index by 1 */
+			format++;									/* Move format index by 1 */
+			count++;									/* Count length of string */
+		}										
 	}
-	va_end(data);
+	va_end(data);										/* Stop va_list */
 
 	return (count);
 }
