@@ -5,7 +5,7 @@
 *.out
 
 # Ignorer les fichiers sans extension (potentiellement exécutables)
-*~
+.*
 
 # Ignorer les fichiers temporaires
 *.tmp
