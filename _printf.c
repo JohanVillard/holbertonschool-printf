@@ -19,8 +19,11 @@ va_list data;											/* Store a va_list */
 		{NULL, NULL},									/* Indicates the end of the structure */
 	};
 
+	if (format == NULL)									/* If pointer of format isn't NULL */
+		return (-1);
+
 	va_start(data, format);								/* Initialize the va_list */
-	while (format != NULL && *format)					/* If pointer of format isn't NULL Run the string */
+	while (*format)										/* Run the string */
 	{
 		if (*format == '%')								/* If the directive begins */
 		{
