@@ -13,7 +13,7 @@
 
 int print_string(va_list data)
 {
-	int i;
+	int i, count = 0;
 	char *str = va_arg(data, char *);
 
 	if (str == NULL) /*if string is empty*/
@@ -25,6 +25,7 @@ int print_string(va_list data)
 					/*to get all the string's indexes*/
 	{
 		_putchar(str[i]);/*print found indexes of a string*/
+		count++;
 	}
-	return (0);
+	return (count);
 }

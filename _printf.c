@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 			{
 				if (*modulo_parser[i].specifier == *(format + 1))
 				{
-					modulo_parser[i].f(data);
+					count += modulo_parser[i].f(data);
 					format += 2;
 					if (*format != '%')
 					{
