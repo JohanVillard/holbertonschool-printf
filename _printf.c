@@ -20,7 +20,7 @@ va_list data;											/* Store a va_list */
 	};
 
 	va_start(data, format);								/* Initialize the va_list */
-	while (*format)										/* Run the string */
+	while (format != NULL && *format)					/* If pointer of format isn't NULL Run the string */
 	{
 		if (*format == '%')								/* If the directive begins */
 		{
