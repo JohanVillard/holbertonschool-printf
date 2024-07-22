@@ -1,0 +1,36 @@
+# Ignorer les fichiers exécutables (communs)
+*.exe
+*.dll
+*.so
+*.out
+
+# Ignorer les fichiers sans extension (potentiellement exécutables)
+*~
+
+# Ignorer les fichiers temporaires
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.backup
+
+# Ignorer les fichiers temporaires générés par certains éditeurs
+*~
+*.swp
+*.swo
+*.bak
+*.backup
+
+# Ignorer les fichiers temporaires d'OS (par exemple, fichiers temporaires de macOS)
+.DS_Store
+._*
+
+# Ignorer les dossiers temporaires et de cache
+tmp/
+temp/
+.cache/
+
+# Ignorer le dossier de test
+/test/
+
