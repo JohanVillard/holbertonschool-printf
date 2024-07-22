@@ -16,10 +16,10 @@ typedef struct parser
 
 /* ----------------------------------------------------- */
 
-int _printf(const char *format, ...);
-int print_char(char c);
-
-int print_string(char *str);
+int _printf(const char *, ...);
+int _putchar(char);
+int print_char(va_list);
+int print_string(va_list);
 
 #endif /* MAIN.H */
 

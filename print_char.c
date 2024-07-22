@@ -1,12 +1,15 @@
 #include "main.h"
+
+
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * print_char - Use _putchar to print va_args char
+ * @data: source list to print
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: Number of char
  */
-int _putchar(char c)
+int print_char(va_list data)
 {
-	return (write(1, &c, 1));
+	_putchar(va_arg(data, int));
+
+	return (0);
 }

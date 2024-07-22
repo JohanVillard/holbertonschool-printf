@@ -2,7 +2,7 @@
 
 /**
 * print_string - Prints a string character by character
-* @str: The string to be printed
+* @data: The string to be printed
 *
 * This function takes a string as input and prints each character
 * one by one. If the input string is NULL, the function returns 0
@@ -11,9 +11,10 @@
 * Return: 0 on successful completion
 */
 
-int print_string(char *str)
+int print_string(va_list data)
 {
 	int i;
+	char *str = va_arg(data, char *);
 
 	if (str == NULL) /*if string is empty*/
 			 /*return 0 to stop execution of useless function*/
@@ -23,7 +24,7 @@ int print_string(char *str)
 	for (i = 0; str[i] != '\0'; i++) /*scrolls down the line*/
 					/*to get all the string's indexes*/
 	{
-		print_char(str[i]);/*print found indexes of a string*/
+		_putchar(str[i]);/*print found indexes of a string*/
 	}
 	return (0);
 }
