@@ -16,6 +16,7 @@ va_list data;											/* Store a va_list */
 	parser_t modulo_parser[] = {						/* Specifier associates to print and count functions */
 		{"c", print_char},
 		{"s", print_string},
+		{"b", print_binary},
 		{NULL, NULL},									/* Indicates the end of the structure */
 	};
 

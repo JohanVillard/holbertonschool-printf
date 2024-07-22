@@ -3,6 +3,8 @@
 
 #include <unistd.h>
 #include <stdarg.h>
+/* -------------------------------------------------------*/
+/* Structure */
 /**
  * struct parser - Return function after format match
  * @specifier: format to print
@@ -15,11 +17,12 @@ typedef struct parser
 } parser_t;
 
 /* ----------------------------------------------------- */
-
+/* Functions */
 int _printf(const char *, ...);
 int _putchar(char);
 int print_char(va_list);
 int print_string(va_list);
+int print_binary(va_list);
 
 #endif /* MAIN.H */
 
