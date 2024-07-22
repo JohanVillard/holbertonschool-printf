@@ -19,7 +19,13 @@ int print_string(va_list data)
 	if (str == NULL) /*if string is empty*/
 			 /*return 0 to stop execution of useless function*/
 	{
-		return (-1);
+		str = "(null)";
+		for (i = 0; str[i] != '\0'; i++)
+		{
+			count++;
+			_putchar(str[i]);
+		}
+		return (count);					/* Number of chars of NULL */
 	}
 	for (i = 0; str[i] != '\0'; i++) /*scrolls down the line*/
 					/*to get all the string's indexes*/
