@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 		{"d", get_int},
 		{"i", get_int},
 		{"%", print_percent},
+		{"b", print_binary},
 		{NULL, NULL},									/* Indicates the end of the structure */
 	};
 

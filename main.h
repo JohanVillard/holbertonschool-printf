@@ -3,6 +3,8 @@
 
 #include <unistd.h>
 #include <stdarg.h>
+/* -------------------------------------------------------*/
+/* Structure */
 #include <stdio.h>
 /**
  * struct parser - Return function after format match
@@ -15,8 +17,8 @@ typedef struct parser
 	int (*f)(va_list);
 } parser_t;
 
-/* ----------------------Functions------------------------- */
-/* Print formated string */
+/* ----------------------------------------------------- */
+
 int _printf(const char *, ...);
 /* Print specified char */
 int _putchar(char);
@@ -24,12 +26,6 @@ int _putchar(char);
 int print_char(va_list);
 /* Print string from va_list*/
 int print_string(va_list);
-/* Print integer from va_list*/
-int get_int(va_list);
-int print_int(int);
-/* Print percent from va_list */
-int print_percent(va_list);
-
 
 #endif /* MAIN.H */
 
