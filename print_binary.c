@@ -9,7 +9,7 @@
 
 int print_binary(va_list data)
 {
-	int num = va_arg(data, int);
+	unsigned int num = va_arg(data, int);
 	int count = 0, i = 0, j = 0;
 	/* Stores binary representation of number */
 	int binaryNum[32]; /* Assuming 32 bit integer. */
