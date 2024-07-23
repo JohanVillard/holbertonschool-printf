@@ -27,6 +27,9 @@ int print_string(va_list);
 /* Print integer from va_list*/
 int get_int(va_list);
 int print_int(int);
+/* Print percent from va_list */
+int print_percent(va_list);
+
 
 #endif /* MAIN.H */
 
