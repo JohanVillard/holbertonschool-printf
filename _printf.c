@@ -10,7 +10,7 @@
  */
 int _printf(const char *format, ...)
 {
-va_list data;											/* Store a va_list */
+	va_list data;										/* Store a va_list */
 	unsigned int count = 0;								/* Number of characters */
 	int i = 0;											/* Occurrence counter */
 	parser_t modulo_parser[] = {						/* Specifier associates to print and count functions */
