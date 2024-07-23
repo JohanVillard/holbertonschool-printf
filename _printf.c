@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
 		{"i", get_int},
 		{"%", print_percent},
 		{"b", print_binary},
+		{"x", get_hex},
 		{NULL, NULL},									/* Indicates the end of the structure */
 	};
 
@@ -30,11 +31,11 @@ int _printf(const char *format, ...)
 	while (*format)										/* Run the string */
 	{
 		if (*format == '%')								/* If the directive begins */
-		{
+		{	
 			while (modulo_parser[i].specifier != NULL)	/* Run the modulo struct */
-			{
+			{	
 				if (*modulo_parser[i].specifier == *(format + 1))	/* If a specifier is found */
-				{
+				{	
 					count += modulo_parser[i].f(data);	/* Count the bytes and print the value */
 					format += 2;						/* Move pointer after the % and specifier */
 					if (*format != '%')					/* If not another directive begin */

@@ -3,9 +3,12 @@
 
 #include <unistd.h>
 #include <stdarg.h>
-/* -------------------------------------------------------*/
-/* Structure */
 #include <stdio.h>
+#include <stdlib.h>
+
+/* -------------------------------------------------------*/
+
+/* Structure */
 /**
  * struct parser - Return function after format match
  * @specifier: format to print
@@ -19,6 +22,7 @@ typedef struct parser
 
 /* ----------------------------------------------------- */
 
+/* Print formatted string */
 int _printf(const char *, ...);
 /* Print specified char */
 int _putchar(char);
@@ -26,13 +30,16 @@ int _putchar(char);
 int print_char(va_list);
 /* Print string from va_list*/
 int print_string(va_list);
-
+/* Get and Print int from va_list */
 int print_int(int);
 int get_int(va_list);
-
+/* Print percent if %% */
 int print_percent(va_list);
-
-int print_binary(va_list data);
+/* Convert and print decimal number into binary */
+int print_binary(va_list);
+/* Get, Convert and Print decimal number into hex with uppercase */
+int get_hex(va_list);
+int print_hex(unsigned int);
 
 #endif /* MAIN.H */
 

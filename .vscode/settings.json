@@ -2,6 +2,7 @@
 	"files.associations": {
 		"main.h": "c",
 		"unistd.h": "c",
-		"print_binary": "c"
+		"print_binary": "c",
+		"stdarg.h": "c"
 	}
 }
