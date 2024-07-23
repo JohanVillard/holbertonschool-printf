@@ -16,6 +16,8 @@ int _printf(const char *format, ...)
 	parser_t modulo_parser[] = {						/* Specifier associates to print and count functions */
 		{"c", print_char},
 		{"s", print_string},
+		{"d", get_int},
+		{"i", get_int},
 		{NULL, NULL},									/* Indicates the end of the structure */
 	};
 
