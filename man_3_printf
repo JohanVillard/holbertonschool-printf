@@ -4,7 +4,7 @@ _printf(3)
 
 NAME
 
-	_printf
+	_printf - Print a formatted string
 
 LIBRARY
 
@@ -14,7 +14,7 @@ SYNOPSIS
 
 	#include "main.h"
 
-	int printf(const char *format, ...);
+	int _printf(const char *format, ...);
 
 DESCRIPTION
 
@@ -23,6 +23,8 @@ DESCRIPTION
 
 	The function write the ouput under the control of a format string that specifies how subsequent
 	arguments (or arguments accessed via stdag(3)) are converted for output.
+
+	The following specifiers are available : c, s, d, i, %.
 
 Format of the format string
 	The format string is a character string. The format string is composed
@@ -46,12 +48,17 @@ Conversion specifiers
 	A character that specifies the type of conversion to be applied.
     The conversion specifiers and their meanings are:
 
-	c	The int argument is converted to an unsigned char,
-		and the resulting character is written.
+	c		The int argument is converted to an unsigned char,
+			and the resulting character is written.
 
-	s	The const char * argument is expected to be a pointer to
-		an array of character type (pointer to a string). Characters from
-		the array are written up to (but not including) a terminating null byte ('\0')
+	s		The const char * argument is expected to be a pointer to
+			an array of character type (pointer to a string). Characters from
+			the array are written up to (but not including) a terminating null byte ('\0')
+
+	d, i	The int argument is converted to signed decimal notation.
+
+	%      	A '%' is written.cNo argument is converted. The complete
+            conversion specification is '%%'.
 
 RETURN VALUE
 
@@ -67,4 +74,13 @@ STANDARDS
 
 EXAMPLES
 
-	
+	To print a char 'c' :
+
+		#include "main.h"
+		_printf("%c", 'c');
+
+
+UPDATE
+
+	23/07/2024
+
