@@ -21,6 +21,7 @@ int _printf(const char *format, ...)
 		{"%", print_percent},
 		{"b", print_binary},
 		{"x", get_hex},
+		{"X", get_heX},
 		{NULL, NULL},									/* Indicates the end of the structure */
 	};
 

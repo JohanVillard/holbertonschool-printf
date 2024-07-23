@@ -37,9 +37,12 @@ int get_int(va_list);
 int print_percent(va_list);
 /* Convert and print decimal number into binary */
 int print_binary(va_list);
-/* Get, Convert and Print decimal number into hex with uppercase */
+/* Get, Convert and Print decimal number into hex with lowercase */
 int get_hex(va_list);
 int print_hex(unsigned int);
+/* Get, Convert and Print decimal number into hex with uppercase */
+int get_heX(va_list);
+int print_heX(unsigned int);
 
 #endif /* MAIN.H */
 
