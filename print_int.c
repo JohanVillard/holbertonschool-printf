@@ -19,6 +19,7 @@ int print_int(int num)
 		if (num < 0)/*Check if the number is negative*/
 		{
 			_putchar('-');/*Print the negative sign*/
+			count++; /* Count the neative sign */
 				num = -num;/*Convert the number*/
 					  /*to positive for further processing*/
 		}
@@ -27,9 +28,10 @@ int print_int(int num)
 		print_int(num / 10);/*Recursively print the rest*/
 					    /*of the digits and add the count*/
 		count++;
-
-	}
+;	}
 	_putchar((num % 10) + '0');/*Recursively print the rest*/
 				  /*of the digits and add the count*/
+
+	printf("COUNT INT: %d", count);
 	return (count);
 }
