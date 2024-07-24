@@ -19,6 +19,11 @@ int modulo_parser(const char *format, va_list data,
 		{"d", get_int},
 		{"i", get_int},
 		{"%", print_percent},
+		{"b", print_binary},
+		{"x", get_hex},
+		{"X", get_heX},
+		{"o", get_octal},
+		{"u", get_decimal},
 		{NULL, NULL},										/* Indicates the end of the structure */
 	};
 
@@ -34,8 +39,10 @@ int modulo_parser(const char *format, va_list data,
 			i++;											/* Continue to search */
 			if (modulo_parser[i].specifier == NULL)			/* If no specifier is find */
 			{
-				_putchar (*format);							/* Print % */
-				_putchar (*(format + 1));					/* Print char after */
+				buffer[*i_buffer] = *format;				/* Print % */
+				(*i_buffer)++;
+				buffer[*i_buffer] = *(format + 1);			/* Print char after */
+				(*i_buffer)++;
 			}
 		}
 	}
