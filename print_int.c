@@ -14,12 +14,21 @@
 
 void print_int(int num)
 {
-		if (num < 0)/*Check if the number is negative*/
-		{
-			_putchar('-');/*Print the negative sign*/
-				num = -num;/*Convert the number*/
-					  /*to positive for further processing*/
-		}
+	if (num == INT_MIN)
+	{
+		/* Avoid overflow by cutting number */
+		_putchar('-');			/*Print the negative sign*/
+		_putchar('2');			/*Print the first digit of INT_MIN*/
+		num = 147483648;		/* Num take the value of the rest of the number */
+	}
+	else if (num < 0)/*Check if the number is negative*/
+	{
+		_putchar('-');/*Print the negative sign*/
+		num = -num;/*Convert the number*/
+					/*to positive for further processing*/
+	}
+
+
 
 
 	if ((num / 10) != 0)/*Check if the number has more digits*/
@@ -28,6 +37,7 @@ void print_int(int num)
 		print_int(num / 10);/*Recursively print the rest*/
 					    /*of the digits and add the count*/
 	}
+
 	_putchar((num % 10) + '0');/*Recursively print the rest*/
-				  /*of the digits and add the count*/
+					  /*of the digits and add the count*/
 }
