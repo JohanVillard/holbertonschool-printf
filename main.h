@@ -31,7 +31,7 @@ int print_char(va_list);
 /* Print string from va_list*/
 int print_string(va_list);
 /* Get and Print int from va_list */
-int print_int(int);
+void print_int(int);
 int get_int(va_list);
 /* Print percent if %% */
 int print_percent(va_list);

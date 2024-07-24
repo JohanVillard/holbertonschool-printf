@@ -13,9 +13,18 @@
 int get_int(va_list data)
 {
 	int count = 0;					/* Counter of bytes */
-	int num = va_arg(data, int);	/* Extract the next arg*/
+	int num = va_arg(data, int);	/* Extract the next arg */
 
 	print_int(num);					/* Call the function that will print */
 
-	return (count);					/* Return Number of bytes */
+	if (num < 0)					/* If num is negative */
+		count++;					/* Add 1 to count */
+
+	while (num != 0)				/* Count char in num*/
+	{
+		count++;
+		num /= 10;
+	}
+
+	return (count);					/* Return number of bytes */
 }
