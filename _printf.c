@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')								/* If the directive begins */
 		{
 			count += modulo_parser(format, data);
-			format += 2;								/* Move pointer after the % and specifier */
+				format += 2;							/* Move pointer after the % and specifier */
 		}
 		else
 		{
