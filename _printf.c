@@ -10,12 +10,13 @@
  */
 int _printf(const char *format, ...)
 {
-	char *buffer = malloc(1024);						/* Create an array of char */
 	int i_buffer = 0;									/* Position of buffer's index */
 	va_list data;										/* Store a va_list */
 	unsigned int count = 0;								/* Number of characters */
+	char *buffer = malloc(1024);						/* Create an array of char */
 
-	if (format == NULL)									/* If pointer of format isn't NULL */
+
+	if (format == NULL || buffer == NULL)				/* If format or buffer isn't NULL */
 		return (-1);
 
 	va_start(data, format);								/* Initialize the va_list */
@@ -23,7 +24,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')								/* If the directive begins */
 		{
-			count += modulo_parser(format, data);		/* Specifier check */
+			count += modulo_parser(format, data, buffer, &i_buffer);	/* Specifier check */
 			format += 2;								/* Move pointer after the % and specifier */
 		}
 		else

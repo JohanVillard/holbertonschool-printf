@@ -10,12 +10,13 @@
 * Return: Return Number of bytes of number.
 */
 
-int get_int(va_list data)
+int get_int(va_list data, char *buffer, int *i_buffer)
 {
 	int count = 0;					/* Counter of bytes */
 	int num = va_arg(data, int);	/* Extract the next arg */
 
-	print_int(num);					/* Call the function that will print */
+
+	print_int(num, buffer, i_buffer);					/* Call the function that will print */
 
 	if (num <= 0)					/* If num is negative or equal to zero */
 		count++;					/* Add 1 to count */

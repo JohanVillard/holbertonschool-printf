@@ -12,29 +12,31 @@
 * Return: The number of characters printed.
 */
 
-void print_int(int num)
+void print_int(int num, char *buffer, int *i_buffer)
 {
 	if (num == INT_MIN)
 	{
 		/* Avoid overflow by cutting number */
-		_putchar('-');			/*Print the negative sign*/
-		_putchar('2');			/*Print the first digit of INT_MIN*/
-		num = 147483648;		/* Num take the value of the rest of the number */
+		buffer[*i_buffer] = '-';				/*Print the negative sign*/
+		(*i_buffer)++;
+		buffer[*i_buffer] = '2';				/*Print the first digit of INT_MIN*/
+		(*i_buffer)++;
+		num = 147483648;						/* Num take the value of the rest of the number */
 	}
-	else if (num < 0)/*Check if the number is negative*/
+	else if (num < 0)							/*Check if the number is negative*/
 	{
-		_putchar('-');/*Print the negative sign*/
-		num = -num;/*Convert the number*/
-					/*to positive for further processing*/
+		buffer[*i_buffer] = '-';				/*Print the negative sign*/
+		(*i_buffer)++;
+		num = -num;								/*Convert the number*/
+												/*to positive for further processing*/
 	}
 
-	if ((num / 10) != 0)/*Check if the number has more digits*/
+	if ((num / 10) != 0)						/*Check if the number has more digits*/
 	{
-
-		print_int(num / 10);/*Recursively print the rest*/
-					    /*of the digits and add the count*/
+		print_int(num / 10, buffer, i_buffer);	/*Recursively print the rest*/
+												/* of the digits and add the count*/
 	}
 
-	_putchar((num % 10) + '0');/*Recursively print the rest*/
-					  /*of the digits and add the count*/
+	buffer[*i_buffer] = (num % 10) + '0';		/*Recursively print the rest*/
+	(*i_buffer)++;								/*of the digits and add the count*/
 }

@@ -18,7 +18,7 @@
 typedef struct parser
 {
 	char *specifier;
-	int (*f)(va_list);
+	int (*f)(va_list, char *, int *);
 } parser_t;
 
 /* ----------------------------------------------------- */
@@ -26,7 +26,7 @@ typedef struct parser
 /* Print formatted string */
 int _printf(const char *, ...);
 /* Modulo parser */
-int modulo_parser(const char *, va_list);
+int modulo_parser(const char *, va_list, char *, int *);
 /* Print specified char */
 int _putchar(char);
 /* Print char from va_list */
@@ -34,8 +34,8 @@ int print_char(va_list);
 /* Print string from va_list*/
 int print_string(va_list);
 /* Get and Print int from va_list */
-void print_int(int);
-int get_int(va_list);
+void print_int(int, char *, int *);
+int get_int(va_list, char *, int *);
 /* Print percent if %% */
 int print_percent(va_list);
 /* Convert and pPint unsigned integer number into binary */
