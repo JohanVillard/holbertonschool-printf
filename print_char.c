@@ -13,7 +13,7 @@ int print_char(va_list data)
 	char c = va_arg(data, int);
 
 	if (c == '\0')					/* If 0 */
-		return (1);				/* Count 1 for the NULL termination */
+		return (1);					/* Count 1 for the NULL termination */
 
 	_putchar(c);
 

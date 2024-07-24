@@ -10,6 +10,8 @@
  */
 int _printf(const char *format, ...)
 {
+	char *buffer = malloc(1024);						/* Create an array of char */
+	int i_buffer = 0;									/* Position of buffer's index */
 	va_list data;										/* Store a va_list */
 	unsigned int count = 0;								/* Number of characters */
 
@@ -21,20 +23,25 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')								/* If the directive begins */
 		{
-			count += modulo_parser(format, data);
-				format += 2;							/* Move pointer after the % and specifier */
+			count += modulo_parser(format, data);		/* Specifier check */
+			format += 2;								/* Move pointer after the % and specifier */
 		}
 		else
 		{
-			if (*format != '\0')							/* If index of format is no empty */
+			if (*format != '\0')						/* If index of format is no empty */
 			{
-				_putchar(*format);							/* Print actual character */
-				format++;									/* Move format index by 1 */
-				count++;									/* Count length of string */
+				buffer[i_buffer] = *format;
+				i_buffer++;
+				format++;								/* Move format index by 1 */
+				count++;								/* Count length of string */
 			}
 		}
 	}
 	va_end(data);										/* Stop va_list */
+
+	write(1, buffer, i_buffer);
+
+	free(buffer);
 
 	return (count);
 }
