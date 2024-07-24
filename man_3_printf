@@ -59,7 +59,15 @@ Conversion specifiers
 
 	%      	A '%' is written.cNo argument is converted. The complete
             conversion specification is '%%'.
+		
+	b		The unsigned int argument is converted to binary integer.
 
+	o, u, x, X
+			The unsigned int argument is converted to unsigned octal (o),
+			unsigned decimal (u), or unsigned hexadecimal (x and X) notation.
+			The letters abcdef are used for x conversions; the letters ABCDEF
+			are used for X conversions.
+			
 RETURN VALUE
 
 	Upon successful return, these functions return the number of bytes printed
