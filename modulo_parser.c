@@ -11,7 +11,8 @@ int modulo_parser(const char *format, va_list data, char *buffer, int *i_buffer)
 {
 	int i = 0, count = 0;									/* Occurrence and bytes counter */
 	parser_t modulo_parser[] = {							/* Specifier associates to print */
-
+		{"c", print_char},
+		{"s", print_string},
 		{"d", get_int},
 		{"i", get_int},
 

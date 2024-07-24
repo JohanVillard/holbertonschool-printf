@@ -30,9 +30,9 @@ int modulo_parser(const char *, va_list, char *, int *);
 /* Print specified char */
 int _putchar(char);
 /* Print char from va_list */
-int print_char(va_list);
+int print_char(va_list, char *, int *);
 /* Print string from va_list*/
-int print_string(va_list);
+int print_string(va_list, char *, int *);
 /* Get and Print int from va_list */
 void print_int(int, char *, int *);
 int get_int(va_list, char *, int *);
