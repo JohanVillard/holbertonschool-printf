@@ -16,6 +16,7 @@ int print_binary(va_list data)
 
 	if (num == 0)
 	{
+		count++;
 		_putchar('0');
 	}
 
