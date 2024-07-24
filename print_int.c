@@ -28,9 +28,6 @@ void print_int(int num)
 					/*to positive for further processing*/
 	}
 
-
-
-
 	if ((num / 10) != 0)/*Check if the number has more digits*/
 	{
 

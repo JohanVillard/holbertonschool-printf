@@ -46,6 +46,9 @@ int print_hex(unsigned int);
 /* Get, Convert and Print decimal number into hex with uppercase */
 int get_heX(va_list);
 int print_heX(unsigned int);
+/* Get, Convert and Print decimal number into octal */
+int get_octal(va_list data);
+int print_octal(unsigned int);
 
 #endif /* MAIN.H */
 
