@@ -37,7 +37,7 @@ int print_string(va_list, char *, int *);
 void print_int(int, char *, int *);
 int get_int(va_list, char *, int *);
 /* Print percent if %% */
-int print_percent(va_list);
+int print_percent(va_list, char *, int *);
 /* Convert and pPint unsigned integer number into binary */
 int print_binary(va_list);
 /* Get, Convert and Print unsigned integer number into hex with lowercase */

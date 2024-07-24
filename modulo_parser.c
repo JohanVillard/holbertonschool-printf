@@ -4,10 +4,13 @@
  * modulo_parser - Return the associate function if char is find
  * @format: String from which the char is extracted
  * @data: Variadic list to extract next argument
+ * @buffer: Array to store char
+ * @i_buffer: Index of buffer
  *
  * Return: Return the number of bytes printed
  */
-int modulo_parser(const char *format, va_list data, char *buffer, int *i_buffer)
+int modulo_parser(const char *format, va_list data,
+													char *buffer, int *i_buffer)
 {
 	int i = 0, count = 0;									/* Occurrence and bytes counter */
 	parser_t modulo_parser[] = {							/* Specifier associates to print */
@@ -15,7 +18,7 @@ int modulo_parser(const char *format, va_list data, char *buffer, int *i_buffer)
 		{"s", print_string},
 		{"d", get_int},
 		{"i", get_int},
-
+		{"%", print_percent},
 		{NULL, NULL},										/* Indicates the end of the structure */
 	};
 
@@ -23,7 +26,7 @@ int modulo_parser(const char *format, va_list data, char *buffer, int *i_buffer)
 	{
 		if (*modulo_parser[i].specifier == *(format + 1))	/* Specifier is found ? */
 		{
-			count += modulo_parser[i].f(data, buffer, i_buffer);				/* Count the bytes and print value */
+			count += modulo_parser[i].f(data, buffer, i_buffer);	/* Count/Store value */
 			break;											/* Stop the while loop */
 		}
 		else												/* If a specifier is not found */
