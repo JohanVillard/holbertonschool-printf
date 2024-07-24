@@ -14,7 +14,7 @@ int get_decimal(va_list data)
 	int count = 0;									/* Counter of bytes */
 	unsigned int num = va_arg(data, unsigned int);	/* Extract the next arg*/
 
-	print_decimal(num);								/* Call the function that will print */
+	count += print_decimal(num);								/* Call the function that will print */
 
 	return (count);									/* Return Number of bytes */
 }
