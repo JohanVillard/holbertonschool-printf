@@ -38,17 +38,20 @@ void print_int(int);
 int get_int(va_list);
 /* Print percent if %% */
 int print_percent(va_list);
-/* Convert and print decimal number into binary */
+/* Convert and pPint unsigned integer number into binary */
 int print_binary(va_list);
-/* Get, Convert and Print decimal number into hex with lowercase */
+/* Get, Convert and Print unsigned integer number into hex with lowercase */
 int get_hex(va_list);
 int print_hex(unsigned int);
-/* Get, Convert and Print decimal number into hex with uppercase */
+/* Get, Convert and Print unsigned integer number into hex with uppercase */
 int get_heX(va_list);
 int print_heX(unsigned int);
-/* Get, Convert and Print decimal number into octal */
+/* Get, Convert and Print unsigned integer number into octal */
 int get_octal(va_list data);
 int print_octal(unsigned int);
+/* Get, Convert and Print unsigned integer number into decimal number */
+int get_decimal(va_list);
+int print_decimal(unsigned int);
 
 #endif /* MAIN.H */
 

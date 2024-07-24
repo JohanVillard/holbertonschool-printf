@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_hex - Convert a decimal number
+ * print_hex - Convert an unsigned int number
  * into hex number with lowercase and print
  * @decimal_num: integer to convert and to print
  *

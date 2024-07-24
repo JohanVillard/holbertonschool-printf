@@ -20,6 +20,7 @@ int modulo_parser(const char *format, va_list data)
 		{"x", get_hex},
 		{"X", get_heX},
 		{"o", get_octal},
+		{"u", get_decimal},
 		{NULL, NULL},									/* Indicates the end of the structure */
 	};
 
