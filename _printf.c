@@ -2,7 +2,7 @@
 
 /**
  * _printf - Prints in the specified format
- * @format: string to parse
+ * @format: String to parse
  *
  * Additional info to put
  * Return: the number of characters printed
@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 	unsigned int count = 0;								/* Number of characters */
 	char *buffer = malloc(1024);						/* Create an array of char */
 
-
 	if (format == NULL || buffer == NULL)				/* If format or buffer isn't NULL */
 		return (-1);
 
@@ -24,7 +23,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')								/* If the directive begins */
 		{
-			count += modulo_parser(format, data, buffer, &i_buffer);	/* Specifier check */
+			count += modulo_parser(format, data, buffer, &i_buffer); /* Specif check */
 			format += 2;								/* Move pointer after the % and specifier */
 		}
 		else
