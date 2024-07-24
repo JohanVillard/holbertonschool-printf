@@ -25,6 +25,8 @@ typedef struct parser
 
 /* Print formatted string */
 int _printf(const char *, ...);
+/* Modulo parser */
+int modulo_parser(const char *, va_list);
 /* Print specified char */
 int _putchar(char);
 /* Print char from va_list */
