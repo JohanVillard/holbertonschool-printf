@@ -32,6 +32,5 @@ int print_int(int num)
 	_putchar((num % 10) + '0');/*Recursively print the rest*/
 				  /*of the digits and add the count*/
 
-	printf("COUNT INT: %d", count);
 	return (count);
 }
