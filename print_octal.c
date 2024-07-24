@@ -11,6 +11,12 @@ int print_octal(unsigned int decimal_num)
 	int i = 0, j = 0, count = 0;
 	char octal_Number[100];
 
+	if (decimal_num == 0)
+	{
+		count++;
+		_putchar('0');
+	}
+
 	while (decimal_num != 0)				/* Loop while decimal num don't return 0 */
 	{
 		octal_Number[i] = decimal_num % 8;

@@ -12,6 +12,12 @@ int print_hex(unsigned int decimal_num)
 	char hexa_Number[100];
 	unsigned int temp = 0;
 
+	if (decimal_num == 0)
+	{
+		count++;
+		_putchar('0');
+	}
+
 	while (decimal_num != 0)			/* Loop while decimal num don't return 0 */
 	{
 		temp = decimal_num % 16;
