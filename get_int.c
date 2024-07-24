@@ -17,7 +17,7 @@ int get_int(va_list data)
 
 	print_int(num);					/* Call the function that will print */
 
-	if (num < 0)					/* If num is negative */
+	if (num <= 0)					/* If num is negative */
 		count++;					/* Add 1 to count */
 
 	while (num != 0)				/* Count char in num*/
