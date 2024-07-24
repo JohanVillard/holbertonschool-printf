@@ -34,5 +34,5 @@ temp/
 # Ignorer le dossier de test
 /test/
 main*.c
-./vscode
+.vscode
 
