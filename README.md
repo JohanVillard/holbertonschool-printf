@@ -145,7 +145,7 @@ Install _printf with gcc
 @JohanVillard https://github.com/JohanVillard
 
 ## FlowChart
-flowchart TB
+```flowchart TB
     id1(["Start"]) --> in[/"input"/]
     in --> init1["Initialize"]
     init1 --> if0{"format is NULL ?"}
@@ -204,3 +204,4 @@ flowchart TB
     style mvptr2 fill:#E1BEE7
     style mvptr1 fill:#E1BEE7
     style return fill:#E1BEE7
+```
