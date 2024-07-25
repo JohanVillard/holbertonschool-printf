@@ -9,7 +9,7 @@ The Printf Project is a component of the Holberton School curriculum, designed t
 
 ## Introduction
 
-### Objectives
+## Objectives
 
 1. **Understanding Variadic Functions:**
    - We gained a solid understanding of variadic functions in C, which allow functions to accept an indefinite number of arguments.
@@ -25,8 +25,9 @@ The Printf Project is a component of the Holberton School curriculum, designed t
 
 5. **Writing Modular and Maintainable Code:**
    - We learned to write modular, maintainable, and well-documented code that adheres to best practices and coding standards.
- Specifiers
- ---------------------------------------------------------
+ 
+## Specifiers
+ |------------------|-------------------------------------|
  | c | print_char   | print just a char                   |
  | s | print_string | print a string                      |
  | d | get_int      | print a number in base 10           |
