@@ -38,6 +38,7 @@ int modulo_parser(const char *format, va_list data)
 			{
 				_putchar (*format);							/* Print % */
 				_putchar (*(format + 1));					/* Print char after */
+				count += 2;
 			}
 		}
 	}
