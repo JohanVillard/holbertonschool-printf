@@ -148,6 +148,7 @@ Install _printf with gcc
 ## FlowChart
 ```mermaid
 flowchart TB;
+    flowchart TB
     id1(["Start"]) --> in[/"input"/]
     in --> init1["Initialize"]
     init1 --> if0{"format is NULL ?"}
@@ -186,24 +187,24 @@ flowchart TB;
     while1 -- False --> return["return count"]
     mvptr1 --> while1
     return --> id2
-    style id1 stroke:#D50000,fill:#D50000
-    style in fill:#FF6D00
-    style init1 fill:#E1BEE7
-    style if0 fill:#00C853
-    style while1 fill:#00C853
-    style returnNULL fill:#E1BEE7
-    style id2 stroke:#D50000,fill:#D50000
-    style if1 fill:#00C853
-    style while2 fill:#00C853
-    style putchar1 fill:#E1BEE7
-    style putchar5 fill:#E1BEE7
-    style if2 fill:#00C853
-    style struct1 fill:#00C853
-    style help_func fill:#E1BEE7
-    style print fill:#E1BEE7
+    style id1 stroke:#D50000,fill:#D50000,color:#000000
+    style in fill:#FF6D00,color:#000000
+    style init1 fill:#E1BEE7,color:#000000
+    style if0 fill:#00C853,color:#000000
+    style while1 fill:#00C853,color:#000000
+    style returnNULL fill:#E1BEE7,color:#000000
+    style id2 stroke:#D50000,fill:#D50000,color:#000000
+    style if1 fill:#00C853,color:#000000
+    style while2 fill:#00C853,color:#000000
+    style putchar1 fill:#E1BEE7,color:#000000
+    style putchar5 fill:#E1BEE7,color:#000000
+    style if2 fill:#00C853,color:#000000
+    style struct1 fill:#00C853,color:#000000
+    style help_func fill:#E1BEE7,color:#000000
+    style print fill:#E1BEE7,color:#000000
     style break fill:#E1BEE7
-    style mvptr3 fill:#E1BEE7
-    style mvptr2 fill:#E1BEE7
-    style mvptr1 fill:#E1BEE7
-    style return fill:#E1BEE7
+    style mvptr3 fill:#E1BEE7,color:#000000
+    style mvptr2 fill:#E1BEE7,color:#000000
+    style mvptr1 fill:#E1BEE7,color:#000000
+    style return fill:#E1BEE7,color:#000000
 ```
