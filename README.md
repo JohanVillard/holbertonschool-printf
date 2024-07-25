@@ -143,7 +143,6 @@ Install _printf with gcc
 ## FlowChart
 ```mermaid
 flowchart TB;
-    flowchart TB
     id1(["Start"]) --> in[/"input"/]
     in --> init1["Initialize"]
     init1 --> if0{"format is NULL ?"}
