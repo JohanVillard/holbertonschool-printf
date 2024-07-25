@@ -27,7 +27,9 @@ The Printf Project is a component of the Holberton School curriculum, designed t
    - We learned to write modular, maintainable, and well-documented code that adheres to best practices and coding standards.
  
 ## Specifiers
-|------------------|-------------------------------------|
+
+| Specifier | Function        |	Use                              |
+|-----------|-------|------------------------------------|
 | c | print_char   | print just a char                   |
 | s | print_string | print a string                      |
 | d | get_int      | print a number in base 10           |
@@ -138,13 +140,6 @@ Install _printf with gcc
   gcc Wall -Werror -Wextra -pedantic -std=gnu89
 ```
 
-    
-## Authors
-
-@IrinaMora https://github.com/IrenBod 
-
-@JohanVillard https://github.com/JohanVillard
-
 ## FlowChart
 ```mermaid
 flowchart TB;
@@ -208,3 +203,9 @@ flowchart TB;
     style mvptr1 fill:#E1BEE7,color:#000000
     style return fill:#E1BEE7,color:#000000
 ```
+
+## Authors
+
+@IrinaMora https://github.com/IrenBod 
+
+@JohanVillard https://github.com/JohanVillard
