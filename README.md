@@ -209,12 +209,6 @@ flowchart TB
     style return fill:#E1BEE7,color:#000000
 ```
 
-## Authors
-
-@IrinaMora <https://github.com/IrenBod>
-
-@JohanVillard <https://github.com/JohanVillard>
-
 ## Roadmap
 
 - **Add a buffer**:
@@ -235,8 +229,8 @@ flowchart TB
 
 - **More if I have time....**
 
-
 ## Authors
 
-- [@irinamora](https://github.com/IrinaMora)
-- [@johanvillard](https://github.com/JohanVillard)
+@IrinaMora <https://github.com/IrenBod>
+
+@JohanVillard <https://github.com/JohanVillard>
