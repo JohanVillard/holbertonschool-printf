@@ -41,7 +41,7 @@ The Printf Project is a component of the Holberton School curriculum, designed t
 
 ## Examples
 
-Printf fonctions examples:
+Here is examples of using the Printf function:
 
 **String function**:
  *      _printf("Let's try to printf a simple sentence.\n");
@@ -52,12 +52,13 @@ Printf fonctions examples:
 *        Output: I can convert 12345 in binary: 11000010010011100100100111001000
 
 **integer convert into hexadecimal**
-*       printf("I can convert %i in hexadecimal: %x\n", 12345);
+*       _printf("I can convert %i in hexadecimal: %x\n", 12345);
 *       Output: I can convert 12345 in hexadecimal: 85e471e8
 
 ## Running Tests
 
-Here is an example of test;
+Here is an example of test:
+   - Compare outputs between custom _printf and original printf
 
 ```C
 #include <limits.h>
@@ -135,13 +136,14 @@ Style guidelines: Betty style
 
 ## Installation
 
-Clone the repository 
-Install _printf with gcc
+Clone the repository _printf
 
 ```bash
   git clone https://github.com/JohanVillard/holbertonschool-printf.git
   cd holbertonschool-printf.git
-  gcc Wall -Werror -Wextra -pedantic -std=gnu89
+  touch main.c "Create your main program : Add an entry point and _printf call in main.c"
+  gcc Wall -Werror -Wextra -pedantic -std=gnu89 *.c
+  ./a.out
 ```
 
 ## FlowChart
