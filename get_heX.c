@@ -15,7 +15,7 @@ int get_heX(va_list data)
 	int count = 0;									/* Counter of bytes */
 	unsigned int num = va_arg(data, unsigned int);	/* Extract the next data arg */
 
-	count += print_heX(num);						/* Call the function to print */
+	count += print_heX(num);						/* Call the function to convert and print */
 
 	return (count);									/* Return Number of bytes */
 }
