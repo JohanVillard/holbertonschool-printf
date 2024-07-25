@@ -140,13 +140,6 @@ Install _printf with gcc
   gcc Wall -Werror -Wextra -pedantic -std=gnu89
 ```
 
-    
-## Authors
-
-@IrinaMora https://github.com/IrenBod 
-
-@JohanVillard https://github.com/JohanVillard
-
 ## FlowChart
 ```mermaid
 flowchart TB;
@@ -209,3 +202,9 @@ flowchart TB;
     style mvptr1 fill:#E1BEE7
     style return fill:#E1BEE7
 ```
+
+## Authors
+
+@IrinaMora https://github.com/IrenBod 
+
+@JohanVillard https://github.com/JohanVillard
