@@ -1,6 +1,5 @@
 _printf(3) — Linux manual page
 
-_printf(3)
 
 NAME
 
@@ -24,7 +23,7 @@ DESCRIPTION
 	The function write the ouput under the control of a format string that specifies how subsequent
 	arguments (or arguments accessed via stdag(3)) are converted for output.
 
-	The following specifiers are available : c, s, d, i, %.
+	The following specifiers are available : c, s, d, i, %, x, X, u, o.
 
 Format of the format string
 	The format string is a character string. The format string is composed
@@ -46,7 +45,7 @@ Format of the format string
 
 Conversion specifiers
 	A character that specifies the type of conversion to be applied.
-    The conversion specifiers and their meanings are:
+	The conversion specifiers and their meanings are:
 
 	c		The int argument is converted to an unsigned char,
 			and the resulting character is written.
@@ -57,8 +56,8 @@ Conversion specifiers
 
 	d, i	The int argument is converted to signed decimal notation.
 
-	%      	A '%' is written.cNo argument is converted. The complete
-            conversion specification is '%%'.
+	%		A '%' is written.cNo argument is converted. The complete
+			conversion specification is '%%'.
 		
 	b		The unsigned int argument is converted to binary integer.
 
@@ -80,6 +79,12 @@ STANDARDS
 	printf()
 		C89, POSIX.1-2001.
 
+BUGS
+
+	Unexpected result when the command % is followed by a number.
+		
+		printf("%1");
+
 EXAMPLES
 
 	To print a char 'c' :
@@ -87,8 +92,12 @@ EXAMPLES
 		#include "main.h"
 		_printf("%c", 'c');
 
+	To print an integer num into a string :
 
+		#include "main.h"
+		_printf("I have %d apples.", 5);
+	
 UPDATE
 
-	23/07/2024
+	25/07/2024
 
