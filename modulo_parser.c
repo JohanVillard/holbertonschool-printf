@@ -1,13 +1,19 @@
 #include "main.h"
 
 /**
- * modulo_parser - Return the associate function if char is find
- * @format: String from which the char is extracted
- * @data: Variadic list to extract next argument
+ * modulo_parser - Call the associated function if the specifier matches.
+ * and return the printed count.
+ * @format: String from which the character is extracted specifier.
+ * @data: List from which to extract the next argument
  * @buffer: Array to store char
  * @i_buffer: Index of buffer
+ * corresponding to the specifier.
  *
- * Return: Return the number of bytes printed
+ * Decription: This function compares the specifiers stored in the structure
+ * with the letter following the %. If a match is found,
+ * the associated function in the structure is called.
+ *
+ * Return: Number of bytes printed
  */
 int modulo_parser(const char *format, va_list data,
 													char *buffer, int *i_buffer)
@@ -41,11 +47,11 @@ int modulo_parser(const char *format, va_list data,
 			{
 				buffer[*i_buffer] = *format;				/* Print % */
 				(*i_buffer)++;
-				buffer[*i_buffer] = *(format + 1);			/* Print char after */
+				buffer[*i_buffer] = *(format + 1);			/* Print character after */
 				(*i_buffer)++;
+				count += 2;
 			}
 		}
 	}
-
 	return (count);
 }

@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+/* ------------------------------------------------------ */
+
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
@@ -52,6 +54,8 @@ int print_octal(unsigned int, char *, int *);
 /* Get, Convert and Print unsigned integer number into decimal number */
 int get_decimal(va_list, char *, int *);
 int print_decimal(unsigned int, char *, int *);
+
+/* ------------------------------------------------------ */
 
 #endif /* MAIN.H */
 

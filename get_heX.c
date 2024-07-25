@@ -6,15 +6,15 @@
 * @buffer: Array to store char
 * @i_buffer: Index of buffer
 *
-* This function extracts an integer from the provided va_list.
-* Then call print_int function that converts in heX and print it.
+* Description: This function extracts an integer from the provided va_list.
+* then call print_heX function that converts in heX and print it.
 *
-* Return: Return Number of bytes of number.
+* Return: Number of bytes printed.
 */
 int get_heX(va_list data, char *buffer, int *i_buffer)
 {
 	int count = 0;									/* Counter of bytes */
-	unsigned int num = va_arg(data, unsigned int);	/* Extract the next arg*/
+	unsigned int num = va_arg(data, unsigned int);	/* Extract the next data arg */
 
 	count += print_heX(num, buffer, i_buffer);		/* Convert and store */
 

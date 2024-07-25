@@ -6,23 +6,23 @@
 * @buffer: Array to store char
 * @i_buffer: Index of buffer
 *
-* This function extracts an integer from the provided va_list.
-* Then call print_int function that converts and store it.
+* Description: This function extracts an integer from the provided va_list.
+* then call print_int function to store it.
 *
-* Return: Return Number of bytes of number.
+* Return: Number of bytes printed.
 */
 int get_int(va_list data, char *buffer, int *i_buffer)
 {
 	int count = 0;					/* Counter of bytes */
-	int num = va_arg(data, int);	/* Extract the next arg */
+	int num = va_arg(data, int);	/* Extract the next data arg */
 
 
-	print_int(num, buffer, i_buffer);	/* Call the function that will print */
+	print_int(num, buffer, i_buffer);	/* Call the function to print */
 
-	if (num <= 0)					/* If num is negative or equal to zero */
-		count++;					/* Add 1 to count */
+	if (num <= 0)					/* If negative or equal to zero */
+		count++;					/* Count 1 char(byte) */
 
-	while (num != 0)				/* Count char in num*/
+	while (num != 0)				/* Count char(byte) in num */
 	{
 		count++;
 		num /= 10;
