@@ -8,5 +8,7 @@
  */
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	return (write(1, &c, 1));	/* Write the value at the address of c */
+								/* At stdout(File descriptor 1) */
+								/* He write 1 byte */
 }
