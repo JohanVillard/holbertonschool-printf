@@ -145,7 +145,8 @@ Install _printf with gcc
 @JohanVillard https://github.com/JohanVillard
 
 ## FlowChart
-```flowchart TB
+```mermaid
+flowchart TB
     id1(["Start"]) --> in[/"input"/]
     in --> init1["Initialize"]
     init1 --> if0{"format is NULL ?"}
