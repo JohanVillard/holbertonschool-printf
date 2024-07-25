@@ -25,6 +25,8 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')									/* If the directive(%) begins */
 		{
+			if (*(format + 1) == '\0')						/* Special case "%"" only */
+				return (-1);
 			count += modulo_parser(format, data, buffer, &i_buffer); /* Specif check */
 			format += 2;								/* Move pointer after the % and specifier */
 		}
