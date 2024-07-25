@@ -147,7 +147,7 @@ Install _printf with gcc
 ## FlowChart
 
 ```mermaid
-flowchart TB;
+flowchart TB
     id1(["Start"]) --> in[/"input"/]
     in --> init1["Initialize"]
     init1 --> if0{"format is NULL ?"}
@@ -159,7 +159,8 @@ flowchart TB;
     if1 -- False --> putchar1["print pointed character
                     Add 1 to count"]
     while2 -- True --> putchar5["print %
-                               print next character"] & if2{"*format +1 = struct char ?"}
+                               print next character
+                               count +2"] & if2{"*format +1 = struct char ?"}
     if2 --> struct1{"1: %c
                     2: %s
                     3: %d
@@ -201,7 +202,7 @@ flowchart TB;
     style struct1 fill:#00C853,color:#000000
     style help_func fill:#E1BEE7,color:#000000
     style print fill:#E1BEE7,color:#000000
-    style break fill:#E1BEE7
+    style break fill:#E1BEE7,color:#000000
     style mvptr3 fill:#E1BEE7,color:#000000
     style mvptr2 fill:#E1BEE7,color:#000000
     style mvptr1 fill:#E1BEE7,color:#000000
