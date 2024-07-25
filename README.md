@@ -145,61 +145,61 @@ Install _printf with gcc
 
 ## FlowChart
 flowchart TB
-     id1(["Start"]) --> in[/"input"/]
-     in --> init1["Initialize"]
-     init1 --> if0{"format is NULL ?"}
-     if0 -- False --> while1{"*format is not end ?"}
-     if0 -- True --> returnNULL["return -1"]
-     returnNULL --> id2(["End"])
-     while1 -- True --> if1{"% is find ?"}
-     if1 -- True --> while2{"End of structure ?"}
-     if1 -- False --> putchar1["print pointed character
-                     Add 1 to count"]
-     while2 -- True --> putchar5["print %
-                                print next character"] & if2{"*format +1 = struct char ?"}
-     if2 --> struct1{"1: %c
-                     2: %s
-                     3: %d
-                     4: %i
-                     5: %b
-                     6: %x
-                     7: %X"}
-     struct1 -- True --> help_func["1: print_char
-                                 2: print_string
-                                 3: get_int
-                                 4: get_int
-                                 5: print_binary
-                                 6: get_hex
-                                 7: get_Hex"]
-     help_func --> print["function print
-                         return count"]
-     print --> break["break"]
-     break --> mvptr3["Move format pointer +2"]
-     putchar5 --> mvptr3
-     mvptr3 --> while1
-     struct1 -- False --> mvptr2["Move struct pointer +1"]
-     mvptr2 --> while2
-     putchar1 --> mvptr1["Move format pointer +1"]
-     while1 -- False --> return["return count"]
-     mvptr1 --> while1
-     return --> id2
-     style id1 stroke:#D50000,fill:#D50000
-     style in fill:#FF6D00
-     style init1 fill:#E1BEE7
-     style if0 fill:#00C853
-     style while1 fill:#00C853
-     style returnNULL fill:#E1BEE7
-     style id2 stroke:#D50000,fill:#D50000
-     style if1 fill:#00C853
-     style while2 fill:#00C853
-     style putchar1 fill:#E1BEE7
-     style putchar5 fill:#E1BEE7
-     style if2 fill:#00C853
-     style struct1 fill:#00C853
-     style help_func fill:#E1BEE7
-     style print fill:#E1BEE7
-     style break fill:#E1BEE7
-     style mvptr3 fill:#E1BEE7
-     style mvptr2 fill:#E1BEE7
-     style mvptr1 fill:#E1BEE7
-     style return fill:#E1BEE7
+    id1(["Start"]) --> in[/"input"/]
+    in --> init1["Initialize"]
+    init1 --> if0{"format is NULL ?"}
+    if0 -- False --> while1{"*format is not end ?"}
+    if0 -- True --> returnNULL["return -1"]
+    returnNULL --> id2(["End"])
+    while1 -- True --> if1{"% is find ?"}
+    if1 -- True --> while2{"End of structure ?"}
+    if1 -- False --> putchar1["print pointed character
+                    Add 1 to count"]
+    while2 -- True --> putchar5["print %
+                               print next character"] & if2{"*format +1 = struct char ?"}
+    if2 --> struct1{"1: %c
+                    2: %s
+                    3: %d
+                    4: %i
+                    5: %b
+                    6: %x
+                    7: %X"}
+    struct1 -- True --> help_func["1: print_char
+                                2: print_string
+                                3: get_int
+                                4: get_int
+                                5: print_binary
+                                6: get_hex
+                                7: get_Hex"]
+    help_func --> print["function print
+                        return count"]
+    print --> break["break"]
+    break --> mvptr3["Move format pointer +2"]
+    putchar5 --> mvptr3
+    mvptr3 --> while1
+    struct1 -- False --> mvptr2["Move struct pointer +1"]
+    mvptr2 --> while2
+    putchar1 --> mvptr1["Move format pointer +1"]
+    while1 -- False --> return["return count"]
+    mvptr1 --> while1
+    return --> id2
+    style id1 stroke:#D50000,fill:#D50000
+    style in fill:#FF6D00
+    style init1 fill:#E1BEE7
+    style if0 fill:#00C853
+    style while1 fill:#00C853
+    style returnNULL fill:#E1BEE7
+    style id2 stroke:#D50000,fill:#D50000
+    style if1 fill:#00C853
+    style while2 fill:#00C853
+    style putchar1 fill:#E1BEE7
+    style putchar5 fill:#E1BEE7
+    style if2 fill:#00C853
+    style struct1 fill:#00C853
+    style help_func fill:#E1BEE7
+    style print fill:#E1BEE7
+    style break fill:#E1BEE7
+    style mvptr3 fill:#E1BEE7
+    style mvptr2 fill:#E1BEE7
+    style mvptr1 fill:#E1BEE7
+    style return fill:#E1BEE7
