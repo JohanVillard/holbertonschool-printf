@@ -2,41 +2,40 @@
 
 /**
  * _printf - Prints in the specified format
- * @format: string to parse
+ * @format: String to parse
  *
- * Additional info to put
- * Return: the number of characters printed
+ * Description: Prints output according to a format
+ *
+ * Return: She number of characters printed
  * (excluding the null byte used to end output to strings)
  */
 int _printf(const char *format, ...)
 {
-	va_list data;										/* Store a va_list */
-	unsigned int count = 0;								/* Number of characters */
+	va_list data;											/* Store a va_list */
+	unsigned int count = 0;									/* Number of characters(bytes) */
 
-	if (format == NULL)									/* If pointer of format isn't NULL */
+	if (format == NULL)										/* If error */
 		return (-1);
 
-	va_start(data, format);								/* Initialize the va_list */
-	while (*format)										/* Run the string */
+	va_start(data, format);									/* Initialize the va_list */
+	while (*format)											/* Run the string */
 	{
-		if (*format == '%')								/* If the directive begins */
+		if (*format == '%')									/* If the directive(%) begins */
 		{
-			if (*(format + 1) == '\0')					/* Special case id % only */
+			if (*(format + 1) == '\0')						/* Special case "%"" only */
 				return (-1);
-			count += modulo_parser(format, data);
-			format += 2;								/* Move pointer after the % and specifier */
+			count += modulo_parser(format, data);			/* Pointing the function */
+															/* according to specifier */
+			format += 2;									/* Move pointer after the % and specifier */
 		}
 		else
 		{
-			if (*format != '\0')							/* If index of format is no empty */
-			{
-				_putchar(*format);							/* Print actual character */
-				format++;									/* Move format index by 1 */
-				count++;									/* Count length of string */
-			}
+			_putchar(*format);								/* Print actual character */
+			format++;										/* Move format index by 1 */
+			count++;										/* Count length of string */
 		}
 	}
-	va_end(data);										/* Stop va_list */
+	va_end(data);											/* Stop va_list */
 
 	return (count);
 }
