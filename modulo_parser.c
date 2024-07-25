@@ -42,6 +42,5 @@ int modulo_parser(const char *format, va_list data)
 			}
 		}
 	}
-
 	return (count);
 }

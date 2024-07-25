@@ -2,7 +2,8 @@
 
 /**
 * get_octal - Get an integer from a va_list.
-* @data: A va_list containing the integer to convert in octal and to be printed.
+* @data: A va_list containing the integer
+* to convert in octal and to be printed.
 *
 * This function extracts an integer from the provided va_list.
 * Then call print_int function that converts in octal and print it.
