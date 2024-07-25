@@ -28,7 +28,7 @@ The Printf Project is a component of the Holberton School curriculum, designed t
  
 ## Specifiers
 
-| specifier | Function        |	Use                              |
+| Specifier | Function        |	Use                              |
 |-----------|-------|------------------------------------|
 | c | print_char   | print just a char                   |
 | s | print_string | print a string                      |
