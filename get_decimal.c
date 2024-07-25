@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
-* get_decimal - Get an integer from a va_list and return the printed count
+* get_decimal - Get an integer from a va_list and return the printed count.
 * @data: A va_list containing the integer to convert
 * in decimal and to be printed.
 *
-* Descrition: This function extracts an integer from the provided va_list.
-* then call print_int function and print it.
+* Description: This function extracts an integer from the provided va_list.
+* then call print_decimal function that converts in decimal and print it.
 *
-* Return: Return mumber of bytes printed.
+* Return: Number of bytes printed.
 */
 int get_decimal(va_list data)
 {

@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * _printf - Prints in the specified format
- * @format: String to parse
+ * _printf - Prints in the specified format.
+ * @format: String to parse.
  *
- * Description: Prints output according to a format
+ * Description: Prints output according to a format.
  *
- * Return: She number of characters printed
+ * Return: Number of characters printed.
  * (excluding the null byte used to end output to strings)
  */
 int _printf(const char *format, ...)
