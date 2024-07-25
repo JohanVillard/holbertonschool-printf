@@ -205,6 +205,6 @@ flowchart TB;
 
 ## Authors
 
-@IrinaMora https://github.com/IrenBod 
+@IrinaMora <https://github.com/IrenBod>
 
-@JohanVillard https://github.com/JohanVillard
+@JohanVillard <https://github.com/JohanVillard>

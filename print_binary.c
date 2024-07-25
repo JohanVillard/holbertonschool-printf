@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
-* print_binary - Convert decimal to binaty and print the number
-* @data: Data to convert into binary
+* print_binary - Convert unsigned integer into binary,
+* prints and counts his number of bytes.
+* @data: List from which to extract the next argument
 *
-* Return: Count of bytes in the number
+* Return: Number of bytes printed.
 */
 
 int print_binary(va_list data)
@@ -16,19 +17,19 @@ int print_binary(va_list data)
 
 	if (num == 0)
 	{
-		count++;
+		count++;			/* Add 1 to count */
 		_putchar('0');
 	}
 
 	while (num > 0)
 	{
-		/* storing remainder in binary array */
+		/* Storing remainder in binary array */
 		binaryNum[i] = num % 2;
 		num = num / 2;
 		i++;
 	}
 
-	/* printing binary array in reverse order */
+	/* Printing binary array in reverse order */
 	for (j = i - 1; j >= 0; j--)
 	{
 		_putchar(binaryNum[j] + '0');

@@ -2,13 +2,13 @@
 
 /**
 * print_string - Prints a string character by character
-* @data: The string to be printed
+* @data: List from which to extract the next argument
 *
 * This function takes a string as input and prints each character
 * one by one. If the input string is NULL, the function returns 0
 * immediately to avoid unnecessary execution.
 *
-* Return: 0 on successful completion
+* Return: Number of bytes printed.
 */
 
 int print_string(va_list data)

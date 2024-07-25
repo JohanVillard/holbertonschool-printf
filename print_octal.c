@@ -2,9 +2,9 @@
 /**
  * print_octal - Convert an unsigned int number
  * into octal number and print
- * @decimal_num: integer to convert and to print
+ * @decimal_num: Unsigned integer to convert and to print.
  *
- * Return: The number of bytes of converted integer
+ * Return: Number of bytes printed.
  */
 int print_octal(unsigned int decimal_num)
 {
@@ -13,7 +13,7 @@ int print_octal(unsigned int decimal_num)
 
 	if (decimal_num == 0)
 	{
-		count++;
+		count++;							/* Add 1 to count */
 		_putchar('0');
 	}
 

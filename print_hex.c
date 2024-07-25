@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * print_hex - Convert an unsigned int number
- * into hex number with lowercase and print
- * @decimal_num: integer to convert and to print
+ * print_hex - Convert unsigned integer into hex,
+ * prints in lowercase and counts his number of bytes.
+ * @decimal_num: Unsigned integer to convert and to print.
  *
- * Return: The number of bytes of converted integer
+ * Return: Number of bytes printed.
  */
 int print_hex(unsigned int decimal_num)
 {
@@ -22,9 +22,9 @@ int print_hex(unsigned int decimal_num)
 	{
 		temp = decimal_num % 16;
 
-		/* converting decimal number */
-		/* in to a hexa decimal */
-		/* number */
+		/* Converting decimal number */
+		/* in to a hexadecimal number */
+		/* Lowercase */
 		if (temp < 10)
 			temp = temp + 48;			/* Add 48 refering to ASCII table */
 		else

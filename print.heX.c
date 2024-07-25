@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * print_heX - Convert an unsigned int number
- * into hex number with uppercase and print
- * @decimal_num: integer to convert and to print
+ * print_heX - Convert unsigned integer into heX,
+ * prints in uppercase and counts his number of bytes.
+ * @decimal_num: Unsigned integer to convert and to print.
  *
- * Return: The number of bytes of converted integer
+ * Return: Number of bytes printed.
  */
 int print_heX(unsigned int decimal_num)
 {

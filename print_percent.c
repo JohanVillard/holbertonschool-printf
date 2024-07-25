@@ -2,12 +2,13 @@
 
 /**
  * print_percent - Print percent when % before
- * @data: Extract percent char from va_list to print it.
+ * @data: List from which to extract the next argument.
+ * It is unused in this function.
  *
  * This function print a percent char when two percent chars
  * are adjacent. --> %%
  *
- * Return: One which is the number of byte occupied by the percent char
+ * Return: Number of bytes printed. (Always 1)
  */
 int print_percent(va_list data __attribute__((unused)))
 {

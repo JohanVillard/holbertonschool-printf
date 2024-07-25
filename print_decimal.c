@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * print_decimal - Convert a unsigned int number
- * into decimal number and print
- * @decimal_num: integer to convert and to print
+ * print_decimal - Convert a unsigned int into decimal number,
+ * prints and counts his number of bytes.
+ * @decimal_num: Unsigned integer to convert and to print.
  *
- * Return: The number of bytes of converted integer
+ * Return: Number of bytes printed.
  */
 int print_decimal(unsigned int decimal_num)
 {
@@ -13,7 +13,7 @@ int print_decimal(unsigned int decimal_num)
 
 	if (decimal_num == 0)
 	{
-		count++;
+		count++;							/* Add 1 to count */
 		_putchar('0');
 	}
 
