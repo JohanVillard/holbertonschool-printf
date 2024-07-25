@@ -122,13 +122,17 @@ Len:[12]
 
 
 ## Environment
+
 Language: C
 
 OS: Ubuntu 20
 
 Compiler: gcc 13.2.0
 
+Version controller: git
+
 Style guidelines: Betty style
+
 ## Installation
 
 Clone the repository 
@@ -141,6 +145,7 @@ Install _printf with gcc
 ```
 
 ## FlowChart
+
 ```mermaid
 flowchart TB;
     id1(["Start"]) --> in[/"input"/]
@@ -208,3 +213,29 @@ flowchart TB;
 @IrinaMora <https://github.com/IrenBod>
 
 @JohanVillard <https://github.com/JohanVillard>
+
+## Roadmap
+
+- **Add a buffer**:
+   - In progress...
+   - Add rules of buffer flushing
+      - It is sent when the buffer gets full.
+      - When a newline character is encountered.
+      - When there is impending input.
+
+- **Handle the following custom conversion specifier**:
+   - S : prints the string.
+   - Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
+
+- **Handle the following flag characters for non-custom conversion specifiers**:
+   - '+'
+   - space
+   - '#'
+
+- **More if I have time....**
+
+
+## Authors
+
+- [@irinamora](https://github.com/IrinaMora)
+- [@johanvillard](https://github.com/JohanVillard)
