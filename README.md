@@ -26,15 +26,16 @@ The Printf Project is a component of the Holberton School curriculum, designed t
 5. **Writing Modular and Maintainable Code:**
    - We learned to write modular, maintainable, and well-documented code that adheres to best practices and coding standards.
  Specifiers
- --------------------------------------
- | c | print_char | print just a char
- | s | print_string | print a string |
- | d | get_int | print a number in base 10 |
- | i | get_int | print a number in base 10 |
- | b | print_binary | print a number in base 2 |
- | x | get_hex | print a number in base 16 lowercase |
- | X | get_heX | print a number in base 16 uppercase |
+ ---------------------------------------------------------
+ | c | print_char   | print just a char                   |
+ | s | print_string | print a string                      |
+ | d | get_int      | print a number in base 10           |
+ | i | get_int      | print a number in base 10           |
+ | b | print_binary | print a number in base 2            |
+ | x | get_hex      | print a number in base 16 lowercase |
+ | X | get_heX      | print a number in base 16 uppercase |
  
+
 ## Examples
 
 Printf fonctions examples:
