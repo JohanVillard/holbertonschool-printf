@@ -31,8 +31,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-				buffer[i_buffer] = *format;
-				flush_buffer(buffer, &i_buffer);
+				buffer[i_buffer] = *format;					/* Store in the buffer */
+				flush_buffer(buffer, &i_buffer);			/* If full, print then reset index */
 				format++;									/* Move format index by 1 */
 				count++;									/* Count length of string */
 		}
