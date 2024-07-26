@@ -38,6 +38,7 @@ int modulo_parser(const char *format, va_list data,
 		if (*modulo_parser[i].specifier == *(format + 1))	/* Specifier is found ? */
 		{
 			count += modulo_parser[i].f(data, buffer, i_buffer);	/* Count/Store value */
+			printf("\n\n\n %d \n\n\n", count);
 			break;											/* Stop the while loop */
 		}
 		else												/* If a specifier is not found */
