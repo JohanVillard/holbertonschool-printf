@@ -27,6 +27,8 @@ typedef struct parser
 
 /* Print formatted string */
 int _printf(const char *, ...);
+/* Empty and reset the buffer memory */
+void flush_buffer(char *, int *);
 /* Modulo parser */
 int modulo_parser(const char *, va_list, char *, int *);
 /* Print specified char */
