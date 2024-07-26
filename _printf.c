@@ -32,10 +32,7 @@ int _printf(const char *format, ...)
 		else
 		{
 				buffer[i_buffer] = *format;
-				if (i_buffer == 1024)
-					flush_buffer(buffer, &i_buffer);
-				else
-					i_buffer++;
+				flush_buffer(buffer, &i_buffer);
 				format++;									/* Move format index by 1 */
 				count++;									/* Count length of string */
 		}

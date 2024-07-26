@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * flush_buffer - Print all the buffer and put his index to 0.
+ * flush_buffer - Print all the buffer and put his index to 0 if full
+ * or move i_buffer
  * @buffer: Character array where formatted strings are stored.
  * @i_buffer: Index of buffer.
  *
@@ -9,6 +10,11 @@
  */
 void flush_buffer(char *buffer, int *i_buffer)
 {
-		write(1, buffer, *i_buffer);
-		*i_buffer = 0;
+		if (i_buffer == 1024)
+		{
+			write(1, buffer, *i_buffer);
+			*i_buffer = 0;
+		}
+		else
+			i_buffer++;
 }
