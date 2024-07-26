@@ -10,11 +10,11 @@
  */
 void flush_buffer(char *buffer, int *i_buffer)
 {
-		if (i_buffer == 1024)
+		if (*i_buffer == 1024)
 		{
 			write(1, buffer, *i_buffer);
 			*i_buffer = 0;
 		}
 		else
-			i_buffer++;
+			(*i_buffer)++;
 }

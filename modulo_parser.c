@@ -46,9 +46,9 @@ int modulo_parser(const char *format, va_list data,
 			if (modulo_parser[i].specifier == NULL)			/* If no specifier is find */
 			{
 				buffer[*i_buffer] = *format;				/* Print % */
-				(*i_buffer)++;
+				flush_buffer(buffer, i_buffer);
 				buffer[*i_buffer] = *(format + 1);			/* Print character after */
-				(*i_buffer)++;
+				flush_buffer(buffer, i_buffer);
 				count += 2;
 			}
 		}
