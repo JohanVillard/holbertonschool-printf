@@ -15,7 +15,7 @@
 int get_hex(va_list data, char *buffer, int *i_buffer)
 {
 	int count = 0;									/* Counter of bytes */
-	unsigned int num = va_arg(data, unsigned int);	/* Extract the next data arg */
+	unsigned long int num = va_arg(data, unsigned long int);	/* Extract the next data arg */
 
 	count += print_hex(num, buffer, i_buffer);		/* Convert and store */
 

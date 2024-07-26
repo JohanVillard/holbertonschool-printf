@@ -46,7 +46,7 @@ int print_percent(va_list, char *, int *);
 int print_binary(va_list, char *, int *);
 /* Get, Convert and Print unsigned integer number into hex with lowercase */
 int get_hex(va_list, char *, int *);
-int print_hex(unsigned int, char *, int *);
+int print_hex(unsigned long int, char *, int *);
 /* Get, Convert and Print unsigned integer number into hex with uppercase */
 int get_heX(va_list, char *, int *);
 int print_heX(unsigned int, char *, int *);

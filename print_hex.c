@@ -8,11 +8,11 @@
  *
  * Return: Number of bytes printed.
  */
-int print_hex(unsigned int decimal_num, char *buffer, int *i_buffer)
+int print_hex(unsigned long int decimal_num, char *buffer, int *i_buffer)
 {
 	int i = 1, j, count = 0;
 	char hexa_Number[100];
-	unsigned int temp = 0;
+	unsigned long int temp = 0;
 
 	if (decimal_num == 0)
 	{
