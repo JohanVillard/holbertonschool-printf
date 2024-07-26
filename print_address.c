@@ -20,7 +20,7 @@ int print_address(va_list data, char *buffer, int *i_buffer)
 	{
 		for (i = 0; str[i] != '\0'; i++)
 		{
-			buffer[*i_buffer] = str[i];			/* Store the char */
+			buffer[*i_buffer] = str[i];				/* Store the char */
 			count += flush_buffer(buffer, i_buffer);
 		}
 		return (-1);

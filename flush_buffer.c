@@ -10,7 +10,7 @@
  */
 int flush_buffer(char *buffer, int *i_buffer)
 {
-	int count = 0;
+	int count = 1;
 	/* Buffer is full and new line */
 	if ((buffer[*i_buffer] == '\n' && *i_buffer == 1024)
 		|| buffer[*i_buffer] == '\0')
@@ -22,8 +22,6 @@ int flush_buffer(char *buffer, int *i_buffer)
 	}
 	else
 		(*i_buffer)++;
-
-	count++;
 
 	return (count);
 }
