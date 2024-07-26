@@ -8,14 +8,19 @@
  *
  * Return: Nothing.
  */
-void flush_buffer(char *buffer, int *i_buffer)
+int flush_buffer(char *buffer, int *i_buffer)
 {
-		if (*i_buffer == 1024 || buffer[*i_buffer] == '\n')				/* Buffer is full */
-																		/* or new line */
-		{
-			write(1, buffer, *i_buffer);
-			*i_buffer = 0;					/* Reset */
-		}
-		else
-			(*i_buffer)++;
+	int count = 0;
+	/* Buffer is full or new line */
+	if (buffer[*i_buffer] == '\n' && *i_buffer == 1024)
+	{
+		write(1, buffer, *i_buffer);
+		*i_buffer = 0;										/* Reset */
+	}
+	else
+		(*i_buffer)++;
+
+	count++;
+
+	return (count);
 }

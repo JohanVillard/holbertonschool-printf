@@ -21,7 +21,7 @@ int print_binary(va_list data, char *buffer, int *i_buffer)
 	{
 		count++;
 		buffer[*i_buffer] = '0';
-		flush_buffer(buffer, i_buffer);
+		count += flush_buffer(buffer, i_buffer);
 	}
 
 	while (num > 0)
@@ -36,8 +36,7 @@ int print_binary(va_list data, char *buffer, int *i_buffer)
 	for (j = i - 1; j >= 0; j--)
 	{
 		buffer[*i_buffer] = binaryNum[j] + '0';
-		(*i_buffer)++;
-		count++;
+		count += flush_buffer(buffer, i_buffer);
 	}
 
 	return (count);

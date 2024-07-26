@@ -23,9 +23,8 @@ int print_string(va_list data, char *buffer, int *i_buffer)
 		str = "(null)";					/* Display (null) */
 		for (i = 0; str[i] != '\0'; i++)
 		{
-			count++;
 			buffer[*i_buffer] = str[i];			/* Store the char */
-			flush_buffer(buffer, i_buffer);
+			count += flush_buffer(buffer, i_buffer);
 		}
 		return (count);					/* Number of chars of (null) */
 	}
@@ -33,8 +32,7 @@ int print_string(va_list data, char *buffer, int *i_buffer)
 					/*to get all the string's indexes*/
 	{
 		buffer[*i_buffer] = str[i];			/* Store the char */
-		flush_buffer(buffer, i_buffer);
-		count++;
+		count += flush_buffer(buffer, i_buffer);
 	}
 	return (count);
 }

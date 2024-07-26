@@ -40,5 +40,5 @@ void print_int(int num, char *buffer, int *i_buffer)
 	}
 
 	buffer[*i_buffer] = (num % 10) + '0';		/* Recursively store the rest */
-	flush_buffer(buffer, i_buffer);				/* of the digits and add the count */
+	flush_buffer(buffer, i_buffer);	/* of the digits and add the count */
 }

@@ -10,14 +10,14 @@
  */
 int print_char(va_list data, char *buffer, int *i_buffer)
 {
-	int count = 1;
+	int count = 0;
 	char c = va_arg(data, int);
 
 	if (data == NULL)					/* If 0 */
 		return (0);					/* Count 1 for the NULL termination */
 
 	buffer[*i_buffer] = c;			/* Store the char */
-	flush_buffer(buffer, i_buffer);
+	count += flush_buffer(buffer, i_buffer);
 
 	return (count);
 }

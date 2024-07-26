@@ -32,9 +32,8 @@ int _printf(const char *format, ...)
 		else
 		{
 				buffer[i_buffer] = *format;					/* Store in the buffer */
-				flush_buffer(buffer, &i_buffer);			/* If full, print then reset index */
+				count += flush_buffer(buffer, &i_buffer);	/* If full, print then reset i */
 				format++;									/* Move format index by 1 */
-				count++;									/* Count length of string */
 		}
 	}
 	va_end(data);											/* Stop va_list */

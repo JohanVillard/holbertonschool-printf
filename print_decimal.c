@@ -15,9 +15,8 @@ int print_decimal(unsigned int decimal_num, char *buffer, int *i_buffer)
 
 	if (decimal_num == 0)
 	{
-		count++;
 		buffer[*i_buffer] = '0';
-		flush_buffer(buffer, i_buffer);
+		count += flush_buffer(buffer, i_buffer);
 	}
 
 	while (decimal_num != 0)				/* Loop while decimal num don't return 0 */
@@ -30,8 +29,7 @@ int print_decimal(unsigned int decimal_num, char *buffer, int *i_buffer)
 	for (j = i - 1; j >= 0; j--)			/* Print in reverse */
 	{
 		buffer[*i_buffer] = dec_Number[j];
-		(*i_buffer)++;
-		count++;
+		count += flush_buffer(buffer, i_buffer);
 	}
 
 	return (count);
