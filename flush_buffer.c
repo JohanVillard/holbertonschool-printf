@@ -15,6 +15,7 @@ int flush_buffer(char *buffer, int *i_buffer)
 	if (buffer[*i_buffer] == '\n' && *i_buffer == 1024)
 	{
 		write(1, buffer, *i_buffer);
+		free(buffer);
 		*i_buffer = 0;										/* Reset */
 	}
 	else
