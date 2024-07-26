@@ -56,8 +56,8 @@ int print_octal(unsigned int, char *, int *);
 /* Get, Convert and Print unsigned integer number into decimal number */
 int get_decimal(va_list, char *, int *);
 int print_decimal(unsigned int, char *, int *);
-
-int print_String(va_list , char *, int *);
+/* Print only string and convert and print excluded character */
+int print_String(va_list, char *, int *);
 
 /* ------------------------------------------------------ */
 
