@@ -23,7 +23,7 @@ int print_address(va_list data, char *buffer, int *i_buffer)
 			buffer[*i_buffer] = str[i];				/* Store the char */
 			count += flush_buffer(buffer, i_buffer);
 		}
-		return (-1);
+		return (count);
 	}
 
 	buffer[*i_buffer] = '0';						/* Store the char */
