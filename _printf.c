@@ -11,10 +11,12 @@
  */
 int _printf(const char *format, ...)
 {
+	int i_buffer = 0;										/* Position of buffer's index */
 	va_list data;											/* Store a va_list */
 	unsigned int count = 0;									/* Number of characters(bytes) */
+	char *buffer = malloc(1024);							/* Create an array of char */
 
-	if (format == NULL)										/* If error */
+	if (format == NULL || buffer == NULL)					/* If format or buffer isn't NULL */
 		return (-1);
 
 	va_start(data, format);									/* Initialize the va_list */
@@ -24,18 +26,22 @@ int _printf(const char *format, ...)
 		{
 			if (*(format + 1) == '\0')						/* Special case "%"" only */
 				return (-1);
-			count += modulo_parser(format, data);			/* Pointing the function */
-															/* according to specifier */
+			count += modulo_parser(format, data, buffer, &i_buffer); /* Specif check */
 			format += 2;									/* Move pointer after the % and specifier */
 		}
 		else
 		{
-			_putchar(*format);								/* Print actual character */
-			format++;										/* Move format index by 1 */
-			count++;										/* Count length of string */
+				buffer[i_buffer] = *format;					/* Store in the buffer */
+				flush_buffer(buffer, &i_buffer);			/* If full, print then reset index */
+				format++;									/* Move format index by 1 */
+				count++;									/* Count length of string */
 		}
 	}
 	va_end(data);											/* Stop va_list */
+
+	write(1, buffer, i_buffer);								/* Write all buffer */
+
+	free(buffer);
 
 	return (count);
 }

@@ -3,10 +3,12 @@
  * print_heX - Convert unsigned integer into heX,
  * prints in uppercase and counts his number of bytes.
  * @decimal_num: Unsigned integer to convert and to print.
+ * @buffer: Array to store char
+ * @i_buffer: Index of buffer
  *
  * Return: Number of bytes printed.
  */
-int print_heX(unsigned int decimal_num)
+int print_heX(unsigned int decimal_num, char *buffer, int *i_buffer)
 {
 	int i = 1, j, count = 0;
 	char hexa_Number[100];
@@ -15,7 +17,8 @@ int print_heX(unsigned int decimal_num)
 	if (decimal_num == 0)
 	{
 		count++;
-		_putchar('0');
+		buffer[*i_buffer] = '0';
+		flush_buffer(buffer, i_buffer);
 	}
 
 	while (decimal_num != 0)			/* Loop while decimal num don't return 0 */
@@ -37,7 +40,8 @@ int print_heX(unsigned int decimal_num)
 
 	for (j = i - 1; j > 0; j--)			/* Print in reverse */
 	{
-		_printf("%c", hexa_Number[j]);
+		buffer[*i_buffer] = hexa_Number[j];
+		flush_buffer(buffer, i_buffer);
 		count++;
 	}
 

@@ -5,6 +5,8 @@
  * and return the printed count.
  * @format: String from which the character is extracted specifier.
  * @data: List from which to extract the next argument
+ * @buffer: Array to store char
+ * @i_buffer: Index of buffer
  * corresponding to the specifier.
  *
  * Decription: This function compares the specifiers stored in the structure
@@ -13,11 +15,12 @@
  *
  * Return: Number of bytes printed
  */
-int modulo_parser(const char *format, va_list data)
+int modulo_parser(const char *format, va_list data,
+													char *buffer, int *i_buffer)
 {
-	int i = 0, count = 0;									/* Index of structure and bytes counter */
-	parser_t modulo_parser[] = {							/* Specifier associates to convert, */
-		{"c", print_char},									/* print and count functions */
+	int i = 0, count = 0;									/* Occurrence and bytes counter */
+	parser_t modulo_parser[] = {							/* Specifier associates to print */
+		{"c", print_char},
 		{"s", print_string},
 		{"d", get_int},
 		{"i", get_int},
@@ -34,7 +37,7 @@ int modulo_parser(const char *format, va_list data)
 	{
 		if (*modulo_parser[i].specifier == *(format + 1))	/* Specifier is found ? */
 		{
-			count += modulo_parser[i].f(data);				/* Calls up the associated function */
+			count += modulo_parser[i].f(data, buffer, i_buffer);	/* Count/Store value */
 			break;											/* Stop the while loop */
 		}
 		else												/* If a specifier is not found */
@@ -42,8 +45,10 @@ int modulo_parser(const char *format, va_list data)
 			i++;											/* Continue to search */
 			if (modulo_parser[i].specifier == NULL)			/* If no specifier is find */
 			{
-				_putchar (*format);							/* Print % */
-				_putchar (*(format + 1));					/* Print character after */
+				buffer[*i_buffer] = *format;				/* Print % */
+				flush_buffer(buffer, i_buffer);
+				buffer[*i_buffer] = *(format + 1);			/* Print character after */
+				flush_buffer(buffer, i_buffer);
 				count += 2;
 			}
 		}
