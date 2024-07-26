@@ -14,8 +14,8 @@ int print_char(va_list data, char *buffer, int *i_buffer)
 	int count = 1;
 	char c = va_arg(data, int);
 
-	if (c == '\0')					/* If 0 */
-		return (1);					/* Count 1 for the NULL termination */
+	if (data == NULL)				/* If 0 */
+		return (0);					/* Count 1 for the NULL termination */
 
 	buffer[*i_buffer] = c;			/* Store the char */
 	(*i_buffer)++;
