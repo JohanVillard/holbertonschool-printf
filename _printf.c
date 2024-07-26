@@ -40,7 +40,8 @@ int _printf(const char *format, ...)
 	va_end(data);											/* Stop va_list */
 
 	buffer[i_buffer] = '\0';								/* Finish the buffer */
-	write(1, buffer, i_buffer);								/* Write all buffer */
+	if (i_buffer > 0)											/* Call if buffer is not empty */
+		write(1, buffer, i_buffer);							/* Write all buffer */
 
 	free(buffer);
 
