@@ -11,11 +11,19 @@
  */
 int print_address(va_list data, char *buffer, int *i_buffer)
 {
-	int count = 0;
+	int count = 0, i;
 	uintptr_t address;
+	char *str = "(nill)";
 
 	if (data == NULL)
+	{
+		for (i = 0; str[i] != '\0'; i++)
+		{
+			buffer[*i_buffer] = str[i];			/* Store the char */
+			count += flush_buffer(buffer, i_buffer);
+		}
 		return (-1);
+	}
 
 	buffer[*i_buffer] = '0';						/* Store the char */
 	count += flush_buffer(buffer, i_buffer);
