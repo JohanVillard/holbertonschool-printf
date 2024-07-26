@@ -18,7 +18,7 @@ int print_hex(unsigned int decimal_num, char *buffer, int *i_buffer)
 	{
 		count++;
 		buffer[*i_buffer] = '0';
-		(*i_buffer)++;
+		flush_buffer(buffer, i_buffer);
 	}
 
 	while (decimal_num != 0)			/* Loop while decimal num don't return 0 */
@@ -41,7 +41,7 @@ int print_hex(unsigned int decimal_num, char *buffer, int *i_buffer)
 	for (j = i - 1; j > 0; j--)			/* Print in reverse */
 	{
 		buffer[*i_buffer] = hexa_Number[j];
-		(*i_buffer)++;
+		flush_buffer(buffer, i_buffer);
 		count++;
 	}
 

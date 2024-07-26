@@ -17,7 +17,7 @@ int print_decimal(unsigned int decimal_num, char *buffer, int *i_buffer)
 	{
 		count++;
 		buffer[*i_buffer] = '0';
-		(*i_buffer)++;
+		flush_buffer(buffer, i_buffer);
 	}
 
 	while (decimal_num != 0)				/* Loop while decimal num don't return 0 */

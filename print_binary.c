@@ -20,7 +20,7 @@ int print_binary(va_list data, char *buffer, int *i_buffer)
 	{
 		count++;
 		buffer[*i_buffer] = '0';
-		(*i_buffer)++;
+		flush_buffer(buffer, i_buffer);
 	}
 
 	while (num > 0)

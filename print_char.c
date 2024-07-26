@@ -18,7 +18,7 @@ int print_char(va_list data, char *buffer, int *i_buffer)
 		return (0);					/* Count 1 for the NULL termination */
 
 	buffer[*i_buffer] = c;			/* Store the char */
-	(*i_buffer)++;
+	flush_buffer(buffer, i_buffer);
 
 	return (count);
 }

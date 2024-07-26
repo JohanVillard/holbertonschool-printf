@@ -20,15 +20,15 @@ void print_int(int num, char *buffer, int *i_buffer)
 	{
 		/* Avoid overflow by cutting number */
 		buffer[*i_buffer] = '-';				/* Store the negative sign */
-		(*i_buffer)++;
+		flush_buffer(buffer, i_buffer);
 		buffer[*i_buffer] = '2';				/* Store the first digit of INT_MIN */
-		(*i_buffer)++;
+		flush_buffer(buffer, i_buffer);
 		num = 147483648;						/* Num take the value of the rest of the number */
 	}
 	else if (num < 0)							/* Check if the number is negative */
 	{
 		buffer[*i_buffer] = '-';				/* Store the negative sign */
-		(*i_buffer)++;
+		flush_buffer(buffer, i_buffer);
 		num = -num;								/* Convert the number */
 												/* to positive for further processing*/
 	}
@@ -40,5 +40,5 @@ void print_int(int num, char *buffer, int *i_buffer)
 	}
 
 	buffer[*i_buffer] = (num % 10) + '0';		/* Recursively store the rest */
-	(*i_buffer)++;								/* of the digits and add the count */
+	flush_buffer(buffer, i_buffer);				/* of the digits and add the count */
 }

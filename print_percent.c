@@ -17,7 +17,7 @@ int print_percent(va_list data __attribute__((unused)),
 	int count = 1;						/* 1 char = 1 byte */
 
 	buffer[*i_buffer] = '%';			/* Store the percentage char */
-	(*i_buffer)++;
+	flush_buffer(buffer, i_buffer);
 
 	return (count);
 }
