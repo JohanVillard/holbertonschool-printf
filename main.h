@@ -58,6 +58,8 @@ int get_decimal(va_list, char *, int *);
 int print_decimal(unsigned int, char *, int *);
 /* Print only string and convert and print excluded character */
 int print_String(va_list, char *, int *);
+/* Print memory address */
+int print_address(va_list, char *, int *);
 
 /* ------------------------------------------------------ */
 

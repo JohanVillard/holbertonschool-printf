@@ -31,6 +31,7 @@ int modulo_parser(const char *format, va_list data,
 		{"o", get_octal},
 		{"u", get_decimal},
 		{"S", print_String},
+		{"p", print_address},
 		{NULL, NULL},										/* Indicates the end of the structure */
 	};
 
