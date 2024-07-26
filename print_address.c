@@ -14,6 +14,9 @@ int print_address(va_list data, char *buffer, int *i_buffer)
 	int count = 0;
 	uintptr_t address;
 
+	if (data == NULL)
+		return (-1);
+
 	buffer[*i_buffer] = '0';						/* Store the char */
 	count += flush_buffer(buffer, i_buffer);
 	buffer[*i_buffer] = 'x';						/* Store the char */
