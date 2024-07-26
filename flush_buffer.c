@@ -12,7 +12,8 @@ int flush_buffer(char *buffer, int *i_buffer)
 {
 	int count = 0;
 	/* Buffer is full or new line */
-	if (buffer[*i_buffer] == '\n' && *i_buffer == 1024)
+	if (buffer[*i_buffer] == '\n' && *i_buffer == 1024
+							&& buffer[*i_buffer] == '\0')
 	{
 		write(1, buffer, *i_buffer);
 		free(buffer);
