@@ -15,7 +15,13 @@ int print_address(va_list data, char *buffer, int *i_buffer)
 	uintptr_t address;
 	char *str = "(nill)";
 
-	if (data == NULL)
+	buffer[*i_buffer] = '0';						/* Store the char */
+	count += flush_buffer(buffer, i_buffer);
+	buffer[*i_buffer] = 'x';						/* Store the char */
+	count += flush_buffer(buffer, i_buffer);
+
+	address = va_arg(data, unsigned long int);
+	if (address == 0)
 	{
 		for (i = 0; str[i] != '\0'; i++)
 		{
@@ -24,13 +30,6 @@ int print_address(va_list data, char *buffer, int *i_buffer)
 		}
 		return (-1);
 	}
-
-	buffer[*i_buffer] = '0';						/* Store the char */
-	count += flush_buffer(buffer, i_buffer);
-	buffer[*i_buffer] = 'x';						/* Store the char */
-	count += flush_buffer(buffer, i_buffer);
-
-	address = va_arg(data, unsigned long int);
 
 	count += print_hex(address, buffer, i_buffer);
 
