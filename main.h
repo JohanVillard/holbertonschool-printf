@@ -57,6 +57,8 @@ int print_octal(unsigned int, char *, int *);
 int get_decimal(va_list, char *, int *);
 int print_decimal(unsigned int, char *, int *);
 
+int print_String(va_list , char *, int *);
+
 /* ------------------------------------------------------ */
 
 #endif /* MAIN.H */
