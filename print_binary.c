@@ -6,11 +6,13 @@
 * @data: List from which to extract the next argument
 * @buffer: Array to store char
 * @i_buffer: Index of buffer
-*
+* @flag: unused
+
 * Return: Number of bytes printed.
 */
 
-int print_binary(va_list data, char *buffer, int *i_buffer)
+int print_binary(va_list data, char *buffer, int *i_buffer,
+char *flag __attribute__((unused)))
 {
 	unsigned int num = va_arg(data, int);
 	int count = 0, i = 0, j = 0;

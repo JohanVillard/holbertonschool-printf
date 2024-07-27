@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	int i_buffer = 0;										/* Position of buffer's index */
 	va_list data;											/* Store a va_list */
 	unsigned int count = 0;									/* Number of characters(bytes) */
-	char *buffer = malloc(1024);							/* Create an array of char */
+	char *buffer = malloc(1024), flag;				/* Create an array of char */
 
 	if (format == NULL || buffer == NULL)					/* If format or buffer isn't NULL */
 		return (-1);
@@ -27,10 +27,10 @@ int _printf(const char *format, ...)
 				return (-1);
 			if (*(format + 1) == '#' || *(format + 1) == '+' || *(format + 1) == ' ')
 			{
-				count += print_flag(format, buffer, &i_buffer);
+				flag = *(format + 1);
 				format++;
-			}
-			count += modulo_parser(format, data, buffer, &i_buffer); /* Specif check */
+			}	/* Specif check */
+			count += modulo_parser(format, data, buffer, &i_buffer, &flag);
 			format += 2;									/* Move pointer after the % and specifier */
 		}
 		else

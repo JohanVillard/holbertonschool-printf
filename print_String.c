@@ -12,7 +12,7 @@
 *
 * Return: Number of bytes stored.
 */
-int print_String(va_list data, char *buffer, int *i_buffer)
+int print_String(va_list data, char *buffer, int *i_buffer, char *flag __attribute__((unused)))
 {
 	int i, count = 0;
 	char *str = va_arg(data, char *);

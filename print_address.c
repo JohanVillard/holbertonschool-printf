@@ -6,10 +6,12 @@
  * @data: List from which to extract the next argument.
  * @buffer: Array to store char.
  * @i_buffer: Index of buffer.
+ * @flag: unused
  *
  * Return: Number of bytes stored.
  */
-int print_address(va_list data, char *buffer, int *i_buffer)
+int print_address(va_list data, char *buffer, int *i_buffer,
+	char *flag __attribute__((unused)))
 {
 	int count = 0, i;
 	uintptr_t address;

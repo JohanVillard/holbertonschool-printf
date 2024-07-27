@@ -5,14 +5,15 @@
 * @data: List from which to extract the next argument
 * @buffer: Array to store char
 * @i_buffer: Index of buffer
-
+* @flag: unused
 * This function takes a string as input and stores each character
 * one by one. If the input string is NULL, the function returns 0
 * immediately to avoid unnecessary execution.
 *
 * Return: Number of bytes stored.
 */
-int print_string(va_list data, char *buffer, int *i_buffer)
+int print_string(va_list data, char *buffer, int *i_buffer,
+	char *flag __attribute__((unused)))
 {
 	int i, count = 0;
 	char *str = va_arg(data, char *);

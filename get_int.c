@@ -5,16 +5,20 @@
 * @data: A va_list containing the integer to be stored.
 * @buffer: Array to store char
 * @i_buffer: Index of buffer
+* @flag: apply if flag exist
 *
 * Description: This function extracts an integer from the provided va_list.
 * then call print_int function to store it.
 *
 * Return: Number of bytes printed.
 */
-int get_int(va_list data, char *buffer, int *i_buffer)
+int get_int(va_list data, char *buffer, int *i_buffer, char *flag)
 {
 	int count = 0;					/* Counter of bytes */
 	int num = va_arg(data, int);	/* Extract the next data arg */
+
+	if (*flag != '\0' && num > 0)
+		print_flag_plus_space(buffer, i_buffer, flag);
 
 	print_int(num, buffer, i_buffer);	/* Call the function to print */
 

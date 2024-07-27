@@ -6,13 +6,15 @@
 * in decimal and to be printed
 * @buffer: Array to store char
 * @i_buffer: Index of buffer
+* @flag: apply if flag exist
 *
 * Description: This function extracts an integer from the provided va_list.
 * then call print_decimal function that converts in decimal and print it.
 *
 * Return: Number of bytes printed.
 */
-int get_decimal(va_list data, char *buffer, int *i_buffer)
+int get_decimal(va_list data, char *buffer, int *i_buffer,
+	char *flag __attribute__((unused)))
 {
 	int count = 0;	/* Counter of bytes */
 	unsigned int num = va_arg(data, unsigned int);	/* Extract the next data arg */

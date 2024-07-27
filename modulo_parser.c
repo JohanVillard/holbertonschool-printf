@@ -8,6 +8,7 @@
  * @buffer: Array to store char
  * @i_buffer: Index of buffer
  * corresponding to the specifier.
+ * @flag: unused
  *
  * Decription: This function compares the specifiers stored in the structure
  * with the letter following the %. If a match is found,
@@ -16,7 +17,7 @@
  * Return: Number of bytes printed
  */
 int modulo_parser(const char *format, va_list data,
-													char *buffer, int *i_buffer)
+	char *buffer, int *i_buffer, char *flag)
 {
 	int i = 0, count = 0;									/* Occurrence and bytes counter */
 	parser_t modulo_parser[] = {							/* Specifier associates to print */
@@ -39,7 +40,8 @@ int modulo_parser(const char *format, va_list data,
 	{
 		if (*modulo_parser[i].specifier == *(format + 1))	/* Specifier is found ? */
 		{
-			count += modulo_parser[i].f(data, buffer, i_buffer);	/* Count/Store value */
+			/* Count/Store value */
+			count += modulo_parser[i].f(data, buffer, i_buffer, flag);
 			break;											/* Stop the while loop */
 		}
 		else												/* If a specifier is not found */
