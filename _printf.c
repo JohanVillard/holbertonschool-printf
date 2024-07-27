@@ -24,8 +24,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')									/* If the directive(%) begins */
 		{
 			if (*(format + 1) == '\0' ||
-				(*(format + 1) == ' ' && *(format + 2) == '\0') ||
-				(*(format + 1) == ' ' && *(format + 2) == '%'))/* Special case */
+				(*(format + 1) == ' ' && *(format + 2) == '\0'))/* Special case */
 				{
 					free(buffer);
 					return (-1);
