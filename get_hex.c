@@ -19,7 +19,7 @@ int get_hex(va_list data, char *buffer, int *i_buffer, char *flag)
 	/* Extract the next data arg */
 	unsigned long int num = va_arg(data, unsigned long int);
 
-	if (*flag != '\0')
+	if (*flag != '\0' && num > 0)
 		count += print_flag_hash_hex(buffer, i_buffer, flag);
 
 	count += print_hex(num, buffer, i_buffer);		/* Convert and store */
