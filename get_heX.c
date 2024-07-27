@@ -31,7 +31,7 @@ int get_heX(va_list data, char *buffer,
 		}
 	else if (*length == 'l')
 	{
-		l_num = va_arg(data, unsigned int);
+		l_num = va_arg(data, unsigned long int);
 		count += print_long_heX(l_num, buffer, i_buffer);
 	}
 	else
