@@ -19,7 +19,7 @@ int get_decimal(va_list data, char *buffer, int *i_buffer,
 {
 	int count = 0;	/* Counter of bytes */
 	unsigned int num = va_arg(data, unsigned int);	/* Extract the next data arg */
-	unsigned short s_num = 0;
+	unsigned short int s_num = 0;
 	unsigned long int l_num = 0;
 
 	if (*length == 'h')

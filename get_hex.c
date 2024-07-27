@@ -20,7 +20,7 @@ int get_hex(va_list data, char *buffer,
 	int count = 0;									/* Counter of bytes */
 	/* Extract the next data arg */
 	unsigned long int num = va_arg(data, unsigned long int);
-	short s_num = 0;
+	short int s_num = 0;
 	long int l_num = 0;
 
 	if (*flag != '\0' && num > 0)

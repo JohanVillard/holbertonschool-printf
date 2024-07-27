@@ -35,7 +35,7 @@ void print_short_int(short int num, char *buffer, int *i_buffer)
 
 	if ((num / 10) != 0)						/* Check if the number has more digits */
 	{
-		print_int(num / 10, buffer, i_buffer);	/* Recursively print the rest */
+		print_short_int(num / 10, buffer, i_buffer);	/* Recursively print the rest */
 												/* of the digits and add the count*/
 	}
 

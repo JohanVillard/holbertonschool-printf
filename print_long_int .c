@@ -16,14 +16,14 @@
 
 void print_long_int(long int num, char *buffer, int *i_buffer)
 {
-	if (num == INT_MIN)
+	if (num == LONG_MIN)
 	{
 		/* Avoid overflow by cutting number */
 		buffer[*i_buffer] = '-';				/* Store the negative sign */
 		flush_buffer(buffer, i_buffer);
-		buffer[*i_buffer] = '2';				/* Store the first digit of INT_MIN */
+		buffer[*i_buffer] = '9';				/* Store the first digit of INT_MIN */
 		flush_buffer(buffer, i_buffer);
-		num = 147483648;						/* Num take the value of the rest of the number */
+		num = 223372036854775808;				/* Num take the value of the rest of the number */
 	}
 	else if (num < 0)							/* Check if the number is negative */
 	{
@@ -35,7 +35,7 @@ void print_long_int(long int num, char *buffer, int *i_buffer)
 
 	if ((num / 10) != 0)						/* Check if the number has more digits */
 	{
-		print_int(num / 10, buffer, i_buffer);	/* Recursively print the rest */
+		print_long_int(num / 10, buffer, i_buffer);	/* Recursively print the rest */
 												/* of the digits and add the count*/
 	}
 

@@ -17,7 +17,7 @@ int get_int(va_list data, char *buffer, int *i_buffer, char *flag, char *length)
 {
 	int count = 0;					/* Counter of bytes */
 	int num = 0;
-	short s_num = 0;
+	short int s_num = 0;
 	long int l_num = 0;
 
 	if (*flag != '\0' && num >= 0)
@@ -29,12 +29,12 @@ int get_int(va_list data, char *buffer, int *i_buffer, char *flag, char *length)
 	{
 		s_num = va_arg(data, int);	/* Extract the next data arg */
 		print_short_int(s_num, buffer, i_buffer);
-		if (l_num <= 0)					/* If negative or equal to zero */
+		if (s_num <= 0)					/* If negative or equal to zero */
 			count++;					/* Count 1 char(byte) */
 		while (l_num != 0)				/* Count char(byte) in num */
 		{
 			count++;
-			l_num /= 10;
+			s_num /= 10;
 		}
 	}
 	else if (*length == 'l')
