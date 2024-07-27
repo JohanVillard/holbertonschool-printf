@@ -26,7 +26,10 @@ int _printf(const char *format, ...)
 			if (*(format + 1) == '\0' ||
 				(*(format + 1) == ' ' && *(format + 2) == '\0') ||
 				(*(format + 1) == ' ' && *(format + 2) == '%'))/* Special case */
-				return (-1);
+				{
+					free(buffer);
+					return (-1);
+				}
 			if (*(format + 1) == '#' || *(format + 1) == '+' || *(format + 1) == ' ')
 			{
 				if ((*(format + 1) == ' ' && *(format + 2) == '+') ||
