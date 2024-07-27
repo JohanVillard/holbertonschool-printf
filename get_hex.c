@@ -20,7 +20,7 @@ int get_hex(va_list data, char *buffer, int *i_buffer, char *flag)
 	unsigned long int num = va_arg(data, unsigned long int);
 
 	if (*flag != '\0')
-		print_flag_hash_hex(buffer, i_buffer, flag);
+		count += print_flag_hash_hex(buffer, i_buffer, flag);
 
 	count += print_hex(num, buffer, i_buffer);		/* Convert and store */
 

@@ -18,7 +18,7 @@ int get_int(va_list data, char *buffer, int *i_buffer, char *flag)
 	int num = va_arg(data, int);	/* Extract the next data arg */
 
 	if (*flag != '\0' && num > 0)
-		print_flag_plus_space(buffer, i_buffer, flag);
+		count += print_flag_plus_space(buffer, i_buffer, flag);
 
 	print_int(num, buffer, i_buffer);	/* Call the function to print */
 

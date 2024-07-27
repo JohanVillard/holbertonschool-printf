@@ -19,7 +19,7 @@ int get_octal(va_list data, char *buffer, int *i_buffer, char *flag)
 	unsigned int num = va_arg(data, unsigned int);	/* Extract the next data arg */
 
 	if (*flag != '\0')
-		print_flag_hash_octal(buffer, i_buffer, flag);
+		count += print_flag_hash_octal(buffer, i_buffer, flag);
 
 	count += print_octal(num, buffer, i_buffer);	/* Convert and store */
 
