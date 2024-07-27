@@ -13,8 +13,8 @@ int _printf(const char *format, ...)
 {
 	int i_buffer = 0;										/* Position of buffer's index */
 	va_list data;											/* Store a va_list */
-	unsigned int count = 0;									/* Number of characters(bytes) */
-	char *buffer = malloc(1024), flag;				/* Create an array of char */
+	unsigned int count = 0;							/* Number of characters(bytes) */
+	char *buffer = malloc(1024), *flag = malloc(10), *length = malloc(2);						/* Create an array of char */
 
 	if (format == NULL || buffer == NULL)					/* If format or buffer isn't NULL */
 		return (-1);
@@ -24,24 +24,34 @@ int _printf(const char *format, ...)
 		if (*format == '%')									/* If the directive(%) begins */
 		{
 			if (*(format + 1) == '\0' ||
-				(*(format + 1) == ' ' && *(format + 2) == '\0'))/* Special case */
-				{
-					free(buffer);
-					return (-1);
-				}
+			(*(format + 1) == ' ' && *(format + 2) == '\0'))/* Special case */
+			{
+				free(buffer);
+				return (-1);
+			}
 			if (*(format + 1) == '#' || *(format + 1) == '+' || *(format + 1) == ' ')
 			{
 				if ((*(format + 1) == ' ' && *(format + 2) == '+') ||
 					(*(format + 1) == '+' && *(format + 2) == ' '))
 				{
-					flag = '+';	/* + overrides space if they follows each other */
+					*flag = '+';	/* + overrides space if they follows each other */
 					format++;	/* pass one character */
+					flag++;
 				}
 				else
-					flag = *(format + 1);
+				{
+					*flag = *(format + 1);	/*  Store flag */
+					flag++;
+				}
 				format++;
-			}	/* Specif check */
-			count += modulo_parser(format, data, buffer, &i_buffer, &flag);
+			}
+			if (*(format + 1) == 'h' || *(format + 1) == 'l')
+			{
+				*length = *(format + 1);	/*  Store flag */
+				format++;
+			}
+			/* Specif check */
+			count += modulo_parser(format, data, buffer, &i_buffer, flag, length);
 			format += 2;									/* Move pointer after the % and specifier */
 		}
 		else

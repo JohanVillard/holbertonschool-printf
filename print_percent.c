@@ -7,6 +7,7 @@
  * @buffer: Array to store char
  * @i_buffer: Index of buffer
  * @flag: unused
+ * @length: length modifier
  *
  * This function print a percent char when two percent chars
  * are adjacent. --> %%
@@ -14,7 +15,9 @@
  * Return: Number of bytes printed. (Always 1)
  */
 int print_percent(va_list data __attribute__((unused)), char *buffer,
-	int *i_buffer, char *flag __attribute__((unused)))
+	int *i_buffer,
+	char *flag __attribute__((unused)),
+	char *length __attribute__((unused)))
 {
 	int count = 0;						/* 1 char = 1 byte */
 

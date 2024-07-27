@@ -6,6 +6,8 @@
 * @buffer: Array to store char
 * @i_buffer: Index of buffer
 * @flag: unused
+* @length: length modifier
+*
 * This function takes a string as input and stores each character
 * one by one. If the input string is NULL, the function returns 0
 * immediately to avoid unnecessary execution.
@@ -13,7 +15,7 @@
 * Return: Number of bytes stored.
 */
 int print_string(va_list data, char *buffer, int *i_buffer,
-	char *flag __attribute__((unused)))
+	char *flag __attribute__((unused)), char *length __attribute__((unused)))
 {
 	int i, count = 0;
 	char *str = va_arg(data, char *);

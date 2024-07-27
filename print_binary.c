@@ -7,12 +7,13 @@
 * @buffer: Array to store char
 * @i_buffer: Index of buffer
 * @flag: unused
-
+* @length: unsused
 * Return: Number of bytes printed.
 */
 
 int print_binary(va_list data, char *buffer, int *i_buffer,
-char *flag __attribute__((unused)))
+	char *flag __attribute__((unused)),
+	char *length __attribute__((unused)))
 {
 	unsigned int num = va_arg(data, int);
 	int count = 0, i = 0, j = 0;

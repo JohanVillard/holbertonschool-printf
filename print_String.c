@@ -5,14 +5,17 @@
 * @data: List from which to extract the next argument
 * @buffer: Array to store char
 * @i_buffer: Index of buffer
-
+* @length: length modifier
+*
 * This function takes a string as input and stores each character
 * one by one. If the input string is NULL, the function returns 0
 * immediately to avoid unnecessary execution.
 *
 * Return: Number of bytes stored.
 */
-int print_String(va_list data, char *buffer, int *i_buffer, char *flag __attribute__((unused)))
+int print_String(va_list data, char *buffer, int *i_buffer,
+	char *flag __attribute__((unused)),
+	char *length __attribute__((unused)))
 {
 	int i, count = 0;
 	char *str = va_arg(data, char *);
@@ -29,7 +32,7 @@ int print_String(va_list data, char *buffer, int *i_buffer, char *flag __attribu
 		return (count);					/* Number of chars of (null) */
 	}
 	/* Scrolls down the line to get all the string's indexes */
-	for (i = 0; str[i] != '\0'; i++)			
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
 		{
