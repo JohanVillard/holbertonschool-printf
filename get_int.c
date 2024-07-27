@@ -31,7 +31,7 @@ int get_int(va_list data, char *buffer, int *i_buffer, char *flag, char *length)
 		print_short_int(s_num, buffer, i_buffer);
 		if (s_num <= 0)					/* If negative or equal to zero */
 			count++;					/* Count 1 char(byte) */
-		while (l_num != 0)				/* Count char(byte) in num */
+		while (s_num != 0)				/* Count char(byte) in num */
 		{
 			count++;
 			s_num /= 10;
