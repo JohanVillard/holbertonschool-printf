@@ -18,7 +18,6 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || buffer == NULL)					/* If format or buffer isn't NULL */
 		return (-1);
-
 	va_start(data, format);									/* Initialize the va_list */
 	while (*format)											/* Run the string */
 	{
@@ -26,6 +25,11 @@ int _printf(const char *format, ...)
 		{
 			if (*(format + 1) == '\0')						/* Special case "%"" only */
 				return (-1);
+			if ('#' == *(format + 1))
+			{
+				print_flag_hash(format, buffer, &i_buffer);
+				format++;
+			}
 			count += modulo_parser(format, data, buffer, &i_buffer); /* Specif check */
 			format += 2;									/* Move pointer after the % and specifier */
 		}
@@ -37,12 +41,9 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(data);											/* Stop va_list */
-
 	buffer[i_buffer] = '\0';								/* Finish the buffer */
 	if (i_buffer > 0)											/* Call if buffer is not empty */
 		write(1, buffer, i_buffer);							/* Write all buffer */
-
 	free(buffer);
-
 	return (count);
 }
