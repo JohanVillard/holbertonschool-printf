@@ -45,7 +45,8 @@ int _printf(const char *format, ...)
 				}
 				format++;
 			}
-			if (*(format + 1) == 'h' || *(format + 1) == 'l')
+			if ((*(format + 1) == 'h' && *(format + 2) != '\n')
+			|| (*(format + 1) == 'l' && *(format + 2) != '\n'))
 			{
 				*length = *(format + 1);	/*  Store flag */
 				format++;

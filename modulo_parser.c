@@ -42,10 +42,18 @@ int modulo_parser(const char *format, va_list data,
 			i++;											/* Continue to search */
 			if (modulo_parser[i].specifier == NULL)			/* If no specifier is find */
 			{
-				buffer[*i_buffer] = *format;				/* Print % */
-				count += flush_buffer(buffer, i_buffer);
-				buffer[*i_buffer] = *(format + 1);			/* Print character after */
-				count += flush_buffer(buffer, i_buffer);
+				if ((*(format + 1) != 'h') || (*(format + 1) != 'l'))
+				{
+					buffer[*i_buffer] = *format;				/* Print % */
+					count += flush_buffer(buffer, i_buffer);
+				}
+				else
+				{
+					buffer[*i_buffer] = *format;				/* Print % */
+					count += flush_buffer(buffer, i_buffer);
+					buffer[*i_buffer] = *(format + 1);			/* Print character after */
+					count += flush_buffer(buffer, i_buffer);
+				}
 			}
 		}
 	}
