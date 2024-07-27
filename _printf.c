@@ -27,7 +27,14 @@ int _printf(const char *format, ...)
 				return (-1);
 			if (*(format + 1) == '#' || *(format + 1) == '+' || *(format + 1) == ' ')
 			{
-				flag = *(format + 1);
+				if ((*(format + 1) == ' ' && *(format + 2) == '+') ||
+					(*(format + 1) == '+' && *(format + 2) == ' '))
+				{
+					flag = '+';	/* + overrides space if they follows each other */
+					format++;	/* pass one character */
+				}
+				else
+					flag = *(format + 1);
 				format++;
 			}	/* Specif check */
 			count += modulo_parser(format, data, buffer, &i_buffer, &flag);
