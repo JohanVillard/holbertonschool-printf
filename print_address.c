@@ -35,7 +35,7 @@ int print_address(va_list data, char *buffer, int *i_buffer,
 	buffer[*i_buffer] = 'x';						/* Store the char */
 	count += flush_buffer(buffer, i_buffer);
 
-	count += print_hex(address, buffer, i_buffer);
+	count += print_long_hex(address, buffer, i_buffer);
 
 	return (count);
 }

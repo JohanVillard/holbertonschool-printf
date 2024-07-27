@@ -17,7 +17,7 @@ int get_heX(va_list data, char *buffer,
 	int *i_buffer, char *flag, char *length)
 {
 	int count = 0;									/* Counter of bytes */
-	unsigned int num = va_arg(data, unsigned int);	/* Extract the next data arg */
+	unsigned int num = 0;	/* Extract the next data arg */
 	short int s_num = 0;
 	long int l_num = 0;
 
@@ -26,16 +26,17 @@ int get_heX(va_list data, char *buffer,
 
 	if (*length == 'h')
 	{
-		s_num = (short int)num;
+		s_num = va_arg(data, unsigned int);
 		count += print_short_heX(s_num, buffer, i_buffer);
 		}
 	else if (*length == 'l')
 	{
-		l_num = (long int)num;
+		l_num = va_arg(data, unsigned int);
 		count += print_long_heX(l_num, buffer, i_buffer);
 	}
 	else
 	{
+		num = va_arg(data, unsigned int);
 		count += print_heX(num, buffer, i_buffer);		/* Convert and store */
 	}
 
