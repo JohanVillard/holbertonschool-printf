@@ -31,8 +31,8 @@ int _printf(const char *, ...);
 int flush_buffer(char *, int *);
 /* Modulo parser */
 int modulo_parser(const char *, va_list, char *, int *);
-/* Hash parser */
-int print_flag_hash(const char *, char *, int *);
+/* Flag parser */
+int print_flag(const char *, char *, int *);
 /* Print specified char */
 int _putchar(char);
 /* Print char from va_list */

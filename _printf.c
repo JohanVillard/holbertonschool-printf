@@ -25,9 +25,9 @@ int _printf(const char *format, ...)
 		{
 			if (*(format + 1) == '\0')						/* Special case "%"" only */
 				return (-1);
-			if ('#' == *(format + 1))
+			if (*(format + 1) == '#' || *(format + 1) == '+' || *(format + 1) == ' ')
 			{
-				print_flag_hash(format, buffer, &i_buffer);
+				count += print_flag(format, buffer, &i_buffer);
 				format++;
 			}
 			count += modulo_parser(format, data, buffer, &i_buffer); /* Specif check */

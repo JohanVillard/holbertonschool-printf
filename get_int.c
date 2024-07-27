@@ -16,7 +16,6 @@ int get_int(va_list data, char *buffer, int *i_buffer)
 	int count = 0;					/* Counter of bytes */
 	int num = va_arg(data, int);	/* Extract the next data arg */
 
-
 	print_int(num, buffer, i_buffer);	/* Call the function to print */
 
 	if (num <= 0)					/* If negative or equal to zero */
